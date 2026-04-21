@@ -109,7 +109,7 @@ useSeoMeta({
                 <div class="flex items-start justify-between gap-3">
                   <NuxtLink
                     :to="`/produit/${item.product.id}`"
-                    class="truncate text-left text-sm font-semibold leading-relaxed text-foreground transition-colors hover:text-primary"
+                    class="truncate capitalize text-left text-sm font-semibold leading-relaxed text-foreground transition-colors hover:text-primary"
                   >
                     {{ item.product.name }}
                   </NuxtLink>

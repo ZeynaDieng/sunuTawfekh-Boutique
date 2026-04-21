@@ -259,7 +259,7 @@ useSeoMeta({
                 </span>
               </div>
               <h1
-                class="text-balance font-serif text-2xl font-normal leading-[1.15] tracking-tight text-foreground sm:text-[1.65rem] md:text-4xl lg:text-5xl"
+                class="text-balance capitalize font-serif text-2xl font-normal leading-[1.15] tracking-tight text-foreground sm:text-[1.65rem] md:text-4xl lg:text-5xl"
               >
                 {{ product.name }}
               </h1>

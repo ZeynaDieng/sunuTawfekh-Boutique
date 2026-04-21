@@ -166,7 +166,7 @@ const cardRootClass = computed(() =>
         </div>
       </div>
       <h3
-        class="line-clamp-1 font-serif text-sm tracking-tight transition-colors duration-luxury ease-luxury group-hover:text-primary-soft md:text-base"
+        class="line-clamp-1 capitalize font-serif text-sm tracking-tight transition-colors duration-luxury ease-luxury group-hover:text-primary-soft md:text-base"
         :class="
           compact
             ? 'max-md:line-clamp-2 max-md:text-xs max-md:leading-tight md:line-clamp-1'

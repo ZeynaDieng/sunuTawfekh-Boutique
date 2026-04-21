@@ -80,7 +80,7 @@ watch(isOpen, async (open) => {
           </div>
           <div class="min-w-0 flex-1 space-y-3 text-foreground">
             <div class="flex items-start justify-between gap-4">
-              <h3 class="truncate text-sm font-semibold leading-relaxed">
+              <h3 class="truncate capitalize text-sm font-semibold leading-relaxed">
                 {{ line.product.name }}
               </h3>
               <button
