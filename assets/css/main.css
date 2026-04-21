@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Homepage — entrée douce au scroll (SSR-safe : pas d’opacity 0 initial) */
+@layer utilities {
+  @keyframes home-reveal-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 14px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  [data-home-reveal].home-reveal-animate {
+    animation: home-reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-home-reveal].home-reveal-animate {
+      animation: none;
+    }
+  }
+
+  /* Harmonise les entrées Tailwind « st-rise » / hero avec prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-st-rise,
+    .animate-st-rise-delay-1,
+    .animate-st-rise-delay-2,
+    .animate-st-hero-fade {
+      animation: none !important;
+    }
+    .animate-st-rise,
+    .animate-st-rise-delay-1,
+    .animate-st-rise-delay-2 {
+      opacity: 1;
+      transform: none;
+    }
+    .animate-st-hero-fade {
+      opacity: 1;
+    }
+  }
+
+  /* Carrousels produits mobile — scroll natif sans barre visible */
+  .home-product-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .home-product-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Témoignages accueil — défilement horizontal en boucle (piste dupliquée ×2) */
+  @keyframes home-testimonials-marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  .home-testimonials-track {
+    display: flex;
+    width: max-content;
+    animation: home-testimonials-marquee 50s linear infinite;
+    will-change: transform;
+  }
+  .home-testimonials-marquee:hover .home-testimonials-track {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .home-testimonials-track {
+      animation: none;
+      transform: none;
+      will-change: auto;
+    }
+    .home-testimonials-marquee {
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+  }
+}
