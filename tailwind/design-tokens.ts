@@ -81,6 +81,6 @@ export const cssVariablesDark: Record<string, string> = {
   "--sidebar-ring": "217.2 91.2% 59.8%",
 };
 
-/** Google Fonts — maquette Sunu Tawfekh : Playfair Display + Inter. */
+/** Google Fonts — maquette Sunu Tawfekh : Inter uniquement. */
 export const googleFontsStylesheetHref =
-  "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap";
+  "https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap";
