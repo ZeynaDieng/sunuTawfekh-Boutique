@@ -106,7 +106,7 @@ useSeoMeta({
 
         <form class="space-y-6" @submit="handleSubmit">
           <div class="border border-border p-4 space-y-2">
-            <h3 class="text-xs tracking-[0.15em] uppercase font-semibold mb-3">Récapitulatif</h3>
+            <h3 class="mb-3 text-sm font-semibold">Récapitulatif</h3>
             <div v-for="i in items" :key="i.product.id" class="flex justify-between text-sm">
               <span>{{ i.product.name }} × {{ i.quantity }}</span>
               <span>{{ formatPrice(i.product.price * i.quantity) }}</span>
@@ -118,7 +118,7 @@ useSeoMeta({
           </div>
 
           <div class="space-y-4">
-            <h3 class="text-xs tracking-[0.15em] uppercase font-semibold">Informations de livraison</h3>
+            <h3 class="text-sm font-semibold">Informations de livraison</h3>
             <Input v-model="form.nom" placeholder="Nom complet *" />
             <Input v-model="form.telephone" placeholder="Téléphone *" />
             <Input v-model="form.adresse" placeholder="Adresse complète *" />
@@ -127,7 +127,7 @@ useSeoMeta({
           </div>
 
           <div class="space-y-3">
-            <h3 class="text-xs tracking-[0.15em] uppercase font-semibold">Mode de paiement</h3>
+            <h3 class="text-sm font-semibold">Mode de paiement</h3>
             <div class="flex flex-col gap-2">
               <button
                 type="button"
@@ -138,7 +138,7 @@ useSeoMeta({
                 @click="payment = 'livraison'"
               >
                 <p class="text-sm font-medium">Paiement à la livraison</p>
-                <p class="text-xs text-muted-foreground">Payez en espèces à réception</p>
+                <p class="text-sm text-muted-foreground">Payez en espèces à réception</p>
               </button>
               <button
                 type="button"
@@ -149,7 +149,7 @@ useSeoMeta({
                 @click="payment = 'whatsapp'"
               >
                 <p class="text-sm font-medium">Commander via WhatsApp</p>
-                <p class="text-xs text-muted-foreground">Envoyez votre commande directement par WhatsApp</p>
+                <p class="text-sm text-muted-foreground">Envoyez votre commande directement par WhatsApp</p>
               </button>
             </div>
           </div>

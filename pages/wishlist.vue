@@ -26,7 +26,7 @@ useSeoMeta({
     <div class="pt-with-fixed-nav pb-12">
       <div class="container mx-auto px-4">
         <div class="text-center mb-10">
-          <p class="text-xs tracking-[0.3em] uppercase text-primary mb-2">Vos coups de cœur</p>
+          <p class="mb-2 text-sm text-primary">Vos coups de cœur</p>
           <h2 class="text-3xl md:text-4xl font-serif">Favoris</h2>
         </div>
 

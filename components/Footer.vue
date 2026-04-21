@@ -8,12 +8,12 @@ import { BRAND_NAME } from "~/utils/brand";
       <div class="grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-4">
         <div class="space-y-6 text-center md:text-left">
           <h2 class="font-serif text-3xl tracking-tight text-primary">{{ BRAND_NAME }}</h2>
-          <p class="mx-auto max-w-xs text-xs font-light leading-loose text-gray-400 md:mx-0">
+          <p class="mx-auto max-w-xs text-sm font-normal leading-loose text-gray-400 md:mx-0">
             Votre destination premium pour le luxe et le bien-être au quotidien. L’excellence à la sénégalaise.
           </p>
         </div>
         <div class="space-y-6 text-center md:text-left">
-          <h3 class="text-xs font-semibold text-primary-soft">Nos univers</h3>
+          <h3 class="text-sm font-semibold text-primary-soft">Nos univers</h3>
           <ul class="space-y-4 text-sm font-medium text-gray-400">
             <li>
               <NuxtLink to="/catalogue?cat=beaute" class="transition-colors hover:text-primary-soft">Beauté &amp; soins</NuxtLink>
@@ -27,7 +27,7 @@ import { BRAND_NAME } from "~/utils/brand";
           </ul>
         </div>
         <div class="space-y-6 text-center md:text-left">
-          <h3 class="text-xs font-semibold text-primary-soft">Clientèle</h3>
+          <h3 class="text-sm font-semibold text-primary-soft">Clientèle</h3>
           <ul class="space-y-4 text-sm font-medium text-gray-400">
             <li>
               <NuxtLink to="/livraison-retours" class="transition-colors hover:text-primary-soft">Livraison &amp; retours</NuxtLink>
@@ -41,26 +41,26 @@ import { BRAND_NAME } from "~/utils/brand";
           </ul>
         </div>
         <div class="space-y-8 text-center md:text-left">
-          <h3 class="text-xs font-semibold text-primary-soft">Privilèges</h3>
-          <p class="text-xs font-light text-gray-400">Inscrivez-vous pour nos offres exclusives {{ BRAND_NAME }}.</p>
+          <h3 class="text-sm font-semibold text-primary-soft">Privilèges</h3>
+          <p class="text-sm font-normal text-gray-400">Inscrivez-vous pour nos offres exclusives {{ BRAND_NAME }}.</p>
           <div class="mx-auto flex max-w-[200px] border-b border-white/20 pb-2 group md:mx-0 md:max-w-none">
             <input
               type="email"
               placeholder="Email"
-              class="w-full bg-transparent text-xs outline-none placeholder:text-gray-700"
+              class="w-full bg-transparent text-sm outline-none placeholder:text-gray-700"
               autocomplete="email"
             >
-            <button type="button" class="text-xs font-semibold text-primary transition-colors hover:text-primary-soft">
+            <button type="button" class="text-sm font-semibold text-primary transition-colors hover:text-primary-soft">
               OK
             </button>
           </div>
         </div>
       </div>
       <div class="mt-24 flex flex-col items-center justify-between gap-6 border-t border-white/5 pt-10 md:flex-row">
-        <p class="text-center text-[11px] text-gray-500">
+        <p class="text-center text-sm text-gray-500">
           © {{ new Date().getFullYear() }} {{ BRAND_NAME }} — Dakar, Sénégal — Tous droits réservés.
         </p>
-        <div class="flex gap-10 text-xs font-semibold text-gray-400">
+        <div class="flex gap-10 text-sm font-semibold text-gray-400">
           <span class="cursor-pointer transition-colors hover:text-primary">Instagram</span>
           <span class="cursor-pointer transition-colors hover:text-primary-soft">Facebook</span>
         </div>

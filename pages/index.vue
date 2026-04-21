@@ -187,7 +187,7 @@ useSeoMeta({
               Nos univers
             </h3>
             <p
-              class="text-xs font-light leading-[1.7] text-muted-foreground md:text-sm"
+              class="text-sm font-normal leading-[1.7] text-muted-foreground md:text-base"
             >
               Chez Sunu Tawfekh, chaque détail est pensé pour refléter la
               qualité et le raffinement.
@@ -195,7 +195,7 @@ useSeoMeta({
           </div>
           <NuxtLink
             to="/catalogue"
-            class="border-b border-primary pb-1 text-xs font-semibold transition-colors duration-luxury ease-luxury hover:border-primary/70 hover:text-primary"
+            class="border-b border-primary pb-1 text-sm font-semibold transition-colors duration-luxury ease-luxury hover:border-primary/70 hover:text-primary"
           >
             Découvrir la collection
           </NuxtLink>
@@ -214,7 +214,7 @@ useSeoMeta({
               >{{ cat.icon }}</span
             >
             <span
-              class="text-center text-xs font-semibold transition-colors duration-luxury ease-luxury group-hover:text-primary"
+              class="text-center text-sm font-semibold transition-colors duration-luxury ease-luxury group-hover:text-primary"
               >{{ cat.name }}</span
             >
           </NuxtLink>
@@ -236,7 +236,7 @@ useSeoMeta({
       <div class="relative z-10 mx-auto max-w-7xl">
         <div class="mb-16 space-y-5 text-center md:mb-20 md:space-y-6">
           <span
-            class="text-xs font-semibold tracking-wide text-primary-soft"
+            class="text-sm font-semibold tracking-wide text-primary-soft"
             >Exclusivités Sunu Tawfekh</span
           >
           <h3 class="font-serif text-3xl md:text-5xl">
@@ -313,7 +313,7 @@ useSeoMeta({
       <div class="relative z-10 mx-auto max-w-7xl">
         <div class="mx-auto max-w-xl text-center md:max-w-2xl">
           <p
-            class="mb-5 text-xs font-semibold tracking-wide text-primary-soft md:mb-6"
+            class="mb-5 text-sm font-semibold tracking-wide text-primary-soft md:mb-6"
           >
             L’esprit Sunu Tawfekh
           </p>
@@ -325,7 +325,7 @@ useSeoMeta({
           </h2>
 
           <p
-            class="text-sm font-light leading-[1.75] text-white/90 md:text-base"
+            class="text-base font-normal leading-[1.75] text-white/95 md:text-lg"
           >
             Nous cultivons l’exigence : pièces choisies pour leur signature,
             leur tenue dans le temps et l’émotion qu’elles suscitent. Chaque
@@ -347,7 +347,7 @@ useSeoMeta({
         >
           <div class="max-w-lg md:text-left">
             <p
-              class="mb-4 text-xs font-semibold tracking-wide text-primary"
+              class="mb-4 text-sm font-semibold tracking-wide text-primary"
             >
               Qualité &amp; confiance
             </p>
@@ -359,7 +359,7 @@ useSeoMeta({
           </div>
           <NuxtLink
             to="/catalogue"
-            class="inline-flex items-center gap-2 border-b border-primary pb-1 text-xs font-semibold text-primary transition-colors duration-luxury ease-luxury hover:border-primary/70 hover:text-primary"
+            class="inline-flex items-center gap-2 border-b border-primary pb-1 text-sm font-semibold text-primary transition-colors duration-luxury ease-luxury hover:border-primary/70 hover:text-primary"
           >
             Explorer la boutique
             <ArrowRight class="h-3.5 w-3.5" />
@@ -406,7 +406,7 @@ useSeoMeta({
       <div class="relative z-10 mx-auto max-w-7xl">
         <div class="mb-14 text-center md:mb-20">
           <p
-            class="mb-5 text-xs font-semibold tracking-wide text-primary-soft md:mb-6"
+            class="mb-5 text-sm font-semibold tracking-wide text-primary-soft md:mb-6"
           >
             Elles &amp; ils en parlent
           </p>
@@ -442,17 +442,17 @@ useSeoMeta({
                   class="flex w-72 shrink-0 flex-col justify-between border border-white/15 bg-white/[0.07] p-9 text-left shadow-sm backdrop-blur-sm sm:w-80 md:w-96 md:p-11"
                 >
                   <p
-                    class="mb-8 text-sm font-light leading-[1.75] text-white/80 md:mb-10 md:text-[0.9375rem]"
+                    class="mb-8 text-base font-normal leading-[1.75] text-white/90 md:mb-10"
                   >
                     « {{ t.quote }} »
                   </p>
                   <footer>
                     <p
-                      class="text-xs font-semibold text-primary-soft"
+                      class="text-sm font-semibold text-primary-soft"
                     >
                       {{ t.author }}
                     </p>
-                    <p class="mt-2 text-xs text-white/55">{{ t.meta }}</p>
+                    <p class="mt-2 text-sm text-white/85">{{ t.meta }}</p>
                   </footer>
                 </blockquote>
               </div>
@@ -487,7 +487,7 @@ useSeoMeta({
             Livraison Tawfekh
           </h4>
           <p
-            class="mx-auto max-w-xs text-xs font-light leading-[1.75] text-muted-foreground"
+            class="mx-auto max-w-xs text-sm font-normal leading-[1.75] text-muted-foreground"
           >
             Service VIP partout au Sénégal en moins de 48h avec le plus grand
             soin.
@@ -503,7 +503,7 @@ useSeoMeta({
             Produits authentiques
           </h4>
           <p
-            class="mx-auto max-w-xs text-xs font-light leading-[1.75] text-muted-foreground"
+            class="mx-auto max-w-xs text-sm font-normal leading-[1.75] text-muted-foreground"
           >
             Chaque article est un trésor d’authenticité sélectionné avec
             rigueur.
@@ -519,7 +519,7 @@ useSeoMeta({
             Paiement à la livraison
           </h4>
           <p
-            class="mx-auto max-w-xs text-xs font-light leading-[1.75] text-muted-foreground"
+            class="mx-auto max-w-xs text-sm font-normal leading-[1.75] text-muted-foreground"
           >
             Simplifiez-vous la vie : payez en cash ou Wave lors de la réception.
           </p>

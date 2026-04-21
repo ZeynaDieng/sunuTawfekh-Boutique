@@ -192,7 +192,7 @@ onBeforeUnmount(() => {
             class="flex shrink-0 items-center justify-between gap-4 border-b border-border bg-card px-4 py-4 pt-[max(1rem,env(safe-area-inset-top))]"
           >
             <div class="min-w-0">
-              <p class="text-xs font-medium text-primary-soft">Menu</p>
+              <p class="text-sm font-medium text-primary-soft">Menu</p>
               <p class="mt-0.5 truncate font-serif text-lg tracking-tight text-primary">
                 {{ BRAND_NAME }}
               </p>
@@ -240,7 +240,7 @@ onBeforeUnmount(() => {
                 />
                 <button
                   type="submit"
-                  class="shrink-0 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-white"
+                  class="shrink-0 rounded-lg bg-primary px-3 py-1.5 text-sm font-semibold text-white"
                 >
                   OK
                 </button>
@@ -301,7 +301,7 @@ onBeforeUnmount(() => {
             </nav>
 
             <nav class="bg-card px-4 pb-4 pt-2" aria-label="Collections">
-              <p class="mb-2 px-1 text-xs font-medium text-muted-foreground">
+              <p class="mb-2 px-1 text-sm font-medium text-muted-foreground">
                 Collections
               </p>
               <ul class="space-y-0.5">
@@ -317,7 +317,7 @@ onBeforeUnmount(() => {
                     @click="menuOpen = false"
                   >
                     <span class="text-base" aria-hidden="true">{{ cat.icon }}</span>
-                    <span class="min-w-0 flex-1 text-[13px] font-semibold">
+                    <span class="min-w-0 flex-1 text-sm font-semibold">
                       {{ cat.name }}
                     </span>
                     <ChevronRight
@@ -342,10 +342,10 @@ onBeforeUnmount(() => {
           <footer
             class="shrink-0 border-t border-border bg-muted/30 px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]"
           >
-            <p class="mb-2 text-center text-xs font-medium text-muted-foreground">
+            <p class="mb-2 text-center text-sm font-medium text-muted-foreground">
               Suivez-nous
             </p>
-            <div class="flex justify-center gap-6 text-xs font-semibold text-primary">
+            <div class="flex justify-center gap-6 text-sm font-semibold text-primary">
               <span class="cursor-pointer underline-offset-4 hover:underline">Instagram</span>
               <span class="cursor-pointer underline-offset-4 hover:underline">TikTok</span>
             </div>

@@ -18,7 +18,7 @@ export const cssVariablesRoot: Record<string, string> = {
   /* Titres / liens sur fond très sombre (footer, etc.) */
   "--primary-soft": "242 48% 72%",
   "--muted": "0 0% 94%",
-  "--muted-foreground": "0 0% 38%",
+  "--muted-foreground": "0 0% 32%",
   /* Survols / ghost / outline — violet léger. */
   "--accent": "242 42% 94%",
   "--accent-foreground": "242 42% 32%",
@@ -63,7 +63,7 @@ export const cssVariablesDark: Record<string, string> = {
   /* Texte lisible sur bouton or en dark */
   "--secondary-foreground": "0 0% 8%",
   "--muted": "0 0% 15%",
-  "--muted-foreground": "0 0% 62%",
+  "--muted-foreground": "0 0% 70%",
   "--accent": "242 30% 20%",
   "--accent-foreground": "242 45% 90%",
   "--destructive": "0 55% 40%",

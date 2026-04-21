@@ -57,7 +57,7 @@ watch(isOpen, async (open) => {
           <p class="text-sm font-light text-muted-foreground">Votre panier Tawfekh est vide.</p>
           <button
             type="button"
-            class="border-b border-primary/60 pb-1 text-xs font-semibold text-primary-soft transition-colors hover:border-primary hover:text-primary"
+            class="border-b border-primary/60 pb-1 text-sm font-semibold text-primary-soft transition-colors hover:border-primary hover:text-primary"
             @click="
               close();
               navigateTo('/catalogue');
@@ -103,7 +103,7 @@ watch(isOpen, async (open) => {
                 >
                   <Minus class="h-3 w-3" />
                 </button>
-                <span class="w-8 text-center text-[10px] font-bold">{{ line.quantity }}</span>
+                <span class="w-8 text-center text-sm font-bold">{{ line.quantity }}</span>
                 <button
                   type="button"
                   class="p-2 hover:text-primary"
@@ -120,7 +120,7 @@ watch(isOpen, async (open) => {
 
       <div v-if="items.length > 0" class="space-y-6 border-t border-border bg-muted/30 p-8 shadow-inner">
         <div class="flex items-center justify-between">
-          <span class="text-xs font-medium text-muted-foreground">Total commande</span>
+          <span class="text-sm font-medium text-muted-foreground">Total commande</span>
           <span class="text-xl font-bold tracking-tight text-primary">{{ formatPrice(totalPrice) }}</span>
         </div>
         <NuxtLink
@@ -131,7 +131,7 @@ watch(isOpen, async (open) => {
         </NuxtLink>
         <NuxtLink
           to="/catalogue"
-          class="block text-center text-xs font-medium text-muted-foreground underline-offset-4 hover:text-primary"
+          class="block text-center text-sm font-medium text-muted-foreground underline-offset-4 hover:text-primary"
         >
           Continuer mes achats
         </NuxtLink>

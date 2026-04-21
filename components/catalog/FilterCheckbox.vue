@@ -17,7 +17,7 @@ const model = defineModel<boolean>({ required: true });
     >
       <Check v-if="model" class="h-2.5 w-2.5 text-white" stroke-width="3" />
     </span>
-    <span class="text-[11px] font-bold uppercase tracking-widest text-muted-foreground transition-colors group-hover:text-foreground">
+    <span class="text-sm font-semibold text-muted-foreground transition-colors group-hover:text-foreground">
       <slot />
     </span>
   </label>

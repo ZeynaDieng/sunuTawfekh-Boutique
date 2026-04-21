@@ -292,7 +292,7 @@ useSeoMeta({
               </h1>
               <div class="mt-2 flex items-center gap-2">
                 <span class="h-0.5 w-8 bg-gold" aria-hidden="true" />
-                <span class="text-xs font-medium text-muted-foreground">
+                <span class="text-sm font-medium text-muted-foreground">
                   <template v-if="pending">Chargement…</template>
                   <template v-else>{{ totalCount }} article{{ totalCount !== 1 ? "s" : "" }} sélectionné{{ totalCount !== 1 ? "s" : "" }}</template>
                 </span>
@@ -300,7 +300,7 @@ useSeoMeta({
             </div>
             <button
               type="button"
-              class="flex items-center gap-2 border border-border bg-card p-3 text-xs font-semibold transition-all hover:bg-primary hover:text-primary-foreground lg:hidden"
+              class="flex items-center gap-2 border border-border bg-card p-3 text-sm font-semibold transition-all hover:bg-primary hover:text-primary-foreground lg:hidden"
               aria-haspopup="dialog"
               :aria-expanded="filtersOpen"
               @click="filtersOpen = true"
@@ -313,7 +313,7 @@ useSeoMeta({
           <div class="relative w-full max-w-xl">
             <label class="sr-only" for="catalogue-search">Rechercher un produit</label>
             <Search
-              class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-primary/70"
+              class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-primary/85"
               aria-hidden="true"
             />
             <input
@@ -323,7 +323,7 @@ useSeoMeta({
               name="q"
               autocomplete="off"
               placeholder="Rechercher par nom, marque…"
-              class="w-full rounded-sm border border-border bg-muted/50 py-3.5 pl-11 pr-11 text-sm text-foreground placeholder:text-muted-foreground/80 outline-none ring-primary/20 transition-shadow focus:border-primary focus:ring-2"
+              class="w-full rounded-sm border border-border bg-muted/50 py-3.5 pl-11 pr-11 text-sm text-foreground placeholder:text-muted-foreground/95 outline-none ring-primary/20 transition-shadow focus:border-primary focus:ring-2"
               @input="onSearchInput"
             />
             <button
@@ -349,7 +349,7 @@ useSeoMeta({
               <button
                 v-if="activeCount > 0"
                 type="button"
-                class="shrink-0 text-[11px] text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+                class="shrink-0 text-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
                 @click="resetFilters"
               >
                 Réinitialiser
@@ -389,7 +389,7 @@ useSeoMeta({
               <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-card shadow-sm">
                 <Search class="h-6 w-6 text-muted-foreground" />
               </div>
-              <p class="text-sm font-light text-muted-foreground">
+              <p class="text-base font-normal text-muted-foreground">
                 <template v-if="searchQuery">
                   Aucun résultat pour « {{ searchQuery }} ». Essayez d’autres mots ou élargissez les filtres.
                 </template>
@@ -407,16 +407,16 @@ useSeoMeta({
             <div v-if="totalPages > 1" class="mt-14 flex items-center justify-center gap-4">
               <button
                 type="button"
-                class="rounded-sm border border-border px-4 py-2 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-40"
+                class="rounded-sm border border-border px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-40"
                 :disabled="page <= 1"
                 @click="page--"
               >
                 Précédent
               </button>
-              <span class="text-xs text-muted-foreground">Page {{ page }} / {{ totalPages }}</span>
+              <span class="text-sm text-muted-foreground">Page {{ page }} / {{ totalPages }}</span>
               <button
                 type="button"
-                class="rounded-sm border border-border px-4 py-2 text-xs text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-40"
+                class="rounded-sm border border-border px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-40"
                 :disabled="page >= totalPages"
                 @click="page++"
               >

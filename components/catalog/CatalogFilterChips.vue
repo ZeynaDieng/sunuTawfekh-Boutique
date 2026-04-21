@@ -23,7 +23,7 @@ const emit = defineEmits<{
     class="mb-5 border-b border-border/60 pb-5 lg:mb-6 lg:pb-6"
     aria-label="Filtres actifs"
   >
-    <p class="mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground lg:hidden">
+    <p class="mb-2 text-sm font-medium text-muted-foreground lg:hidden">
       Filtres actifs
     </p>
     <div
@@ -33,7 +33,7 @@ const emit = defineEmits<{
         v-for="(chip, i) in chips"
         :key="i"
         type="button"
-        class="inline-flex max-w-[min(100%,280px)] shrink-0 touch-manipulation items-center gap-1.5 rounded-full border border-gold/40 bg-gold/5 px-3 py-1.5 text-left text-[11px] text-foreground transition-colors active:bg-gold/25 hover:bg-gold/15 lg:max-w-full lg:shrink lg:py-1"
+        class="inline-flex max-w-[min(100%,280px)] shrink-0 touch-manipulation items-center gap-1.5 rounded-full border border-gold/40 bg-gold/5 px-3 py-1.5 text-left text-sm text-foreground transition-colors active:bg-gold/25 hover:bg-gold/15 lg:max-w-full lg:shrink lg:py-1"
         @click="emit('remove', chip)"
       >
         <span class="min-w-0 truncate">

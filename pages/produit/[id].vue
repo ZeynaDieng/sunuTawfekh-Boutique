@@ -167,7 +167,7 @@ useSeoMeta({
       <div class="mx-auto max-w-7xl px-4 md:px-8">
         <NuxtLink
           to="/catalogue"
-          class="mb-6 inline-flex min-h-11 items-center gap-2 text-xs font-medium text-muted-foreground transition-colors hover:text-primary md:mb-10 lg:mb-12"
+          class="mb-6 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary md:mb-10 lg:mb-12"
         >
           <ArrowLeft class="h-4 w-4 shrink-0" /> Retour à la boutique
         </NuxtLink>
@@ -247,13 +247,13 @@ useSeoMeta({
             <div class="space-y-3 md:space-y-4">
               <div class="flex flex-wrap items-center gap-2 md:gap-3">
                 <span
-                  class="rounded-full bg-primary/5 px-3 py-1 text-[11px] font-semibold text-primary"
+                  class="rounded-full bg-primary/5 px-3 py-1 text-xs font-semibold text-primary"
                 >
                   {{ categoryLabel }}
                 </span>
                 <span
                   v-if="showBioBadge"
-                  class="rounded-full bg-gold/10 px-3 py-1 text-[11px] font-semibold text-gold"
+                  class="rounded-full bg-gold/10 px-3 py-1 text-xs font-semibold text-gold"
                 >
                   Naturel &amp; Bio
                 </span>
@@ -272,12 +272,12 @@ useSeoMeta({
               <div class="flex flex-wrap items-center gap-2 text-gold">
                 <Star class="h-4 w-4 shrink-0 fill-gold text-gold" />
                 <span class="text-sm font-bold">{{ product.rating }}</span>
-                <span class="text-sm text-muted-foreground">({{ product.reviews }} avis)</span>
+                <span class="text-base text-muted-foreground">({{ product.reviews }} avis)</span>
               </div>
             </div>
 
             <p
-              class="border-l-2 border-primary py-1 pl-4 text-sm font-light leading-relaxed text-muted-foreground md:py-2 md:pl-6 md:text-base"
+              class="border-l-2 border-primary py-1 pl-4 text-base font-normal leading-relaxed text-muted-foreground md:py-2 md:pl-6 md:text-lg"
             >
               {{ product.description }}
             </p>
@@ -319,7 +319,7 @@ useSeoMeta({
                   L’engagement Sunu Tawfekh
                   <ChevronDown class="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" />
                 </summary>
-                <p class="px-3 pb-3 pt-0 text-xs font-light leading-relaxed text-muted-foreground md:px-0 md:pb-0 md:pt-6 md:text-sm">
+                <p class="px-3 pb-3 pt-0 text-sm font-normal leading-relaxed text-muted-foreground md:px-0 md:pb-0 md:pt-6 md:text-base">
                   Nous garantissons l’authenticité de chaque article. Notre boutique sélectionne uniquement des produits
                   qui apportent satisfaction (Tawfekh) et bien-être à nos clients.
                 </p>
@@ -333,7 +333,7 @@ useSeoMeta({
                     :key="key"
                     class="rounded-md border border-border/80 bg-muted/20 px-3 py-2.5 text-sm sm:border-0 sm:bg-transparent sm:px-0 sm:py-0"
                   >
-                    <dt class="text-xs text-muted-foreground capitalize md:text-sm">{{ key }}</dt>
+                    <dt class="text-sm text-muted-foreground capitalize">{{ key }}</dt>
                     <dd class="font-medium text-foreground">{{ val }}</dd>
                   </div>
                 </dl>

@@ -33,7 +33,7 @@ useSeoMeta({
       <div class="mx-auto max-w-7xl px-4 md:px-8">
         <NuxtLink
           to="/catalogue"
-          class="mb-10 inline-flex items-center gap-2 text-xs font-medium text-muted-foreground transition-colors hover:text-primary"
+          class="mb-10 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
         >
           <ArrowLeft class="h-4 w-4" /> Retour à la boutique
         </NuxtLink>
@@ -44,16 +44,16 @@ useSeoMeta({
           >
             <ShoppingBag class="h-10 w-10" stroke-width="1.25" />
           </div>
-          <p class="mb-2 text-xs font-medium text-primary">Votre sélection</p>
+          <p class="mb-2 text-sm font-medium text-primary">Votre sélection</p>
           <h1 class="mb-3 font-serif text-2xl tracking-tight text-primary md:text-3xl">
             Panier vide
           </h1>
-          <p class="mb-10 max-w-sm text-sm font-light leading-relaxed text-muted-foreground">
+          <p class="mb-10 max-w-sm text-base font-normal leading-relaxed text-muted-foreground">
             Découvrez nos collections et ajoutez vos coups de cœur à votre panier Tawfekh.
           </p>
           <NuxtLink
             to="/catalogue"
-            class="inline-flex items-center gap-2 border-b border-primary/60 pb-1.5 text-xs font-semibold text-primary-soft transition-colors hover:border-primary hover:text-primary"
+            class="inline-flex items-center gap-2 border-b border-primary/60 pb-1.5 text-sm font-semibold text-primary-soft transition-colors hover:border-primary hover:text-primary"
           >
             Commencer mon shopping <ChevronRight class="h-3.5 w-3.5" />
           </NuxtLink>
@@ -66,17 +66,17 @@ useSeoMeta({
       <div class="mx-auto max-w-3xl px-4 md:px-8">
         <NuxtLink
           to="/catalogue"
-          class="mb-10 inline-flex items-center gap-2 text-xs font-medium text-muted-foreground transition-colors hover:text-primary"
+          class="mb-10 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
         >
           <ArrowLeft class="h-4 w-4" /> Retour à la boutique
         </NuxtLink>
 
         <header class="mb-10 text-center md:text-left">
-          <p class="mb-2 text-xs font-medium text-primary">Votre sélection</p>
+          <p class="mb-2 text-sm font-medium text-primary">Votre sélection</p>
           <h1 class="font-serif text-2xl tracking-tight text-primary md:text-4xl">Panier</h1>
           <div class="mt-3 flex flex-wrap items-center justify-center gap-2 md:justify-start">
             <span class="h-0.5 w-8 bg-gold" aria-hidden="true" />
-            <span class="text-xs font-medium text-muted-foreground">
+            <span class="text-sm font-medium text-muted-foreground">
               {{ totalItems }} article{{ totalItems !== 1 ? "s" : "" }}
             </span>
           </div>
@@ -135,7 +135,7 @@ useSeoMeta({
                     >
                       <Minus class="h-3.5 w-3.5" />
                     </button>
-                    <span class="min-w-[2rem] text-center text-[10px] font-bold tabular-nums">{{
+                    <span class="min-w-[2rem] text-center text-sm font-bold tabular-nums">{{
                       item.quantity
                     }}</span>
                     <button
@@ -158,7 +158,7 @@ useSeoMeta({
 
         <div class="mt-8 space-y-6 rounded-sm border border-border bg-card p-6 shadow-inner md:p-8">
           <div class="flex items-center justify-between gap-4">
-            <span class="text-xs font-medium text-muted-foreground">
+            <span class="text-sm font-medium text-muted-foreground">
               Total commande
             </span>
             <span class="text-xl font-bold tracking-tight text-primary md:text-2xl">
@@ -175,7 +175,7 @@ useSeoMeta({
 
           <NuxtLink
             to="/catalogue"
-            class="block text-center text-xs font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-primary"
+            class="block text-center text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-primary"
           >
             Continuer mes achats
           </NuxtLink>
