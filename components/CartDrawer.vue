@@ -38,7 +38,7 @@ watch(isOpen, async (open) => {
       :class="isOpen ? 'translate-x-0' : 'translate-x-full'"
     >
       <div class="flex items-center justify-between border-b border-border bg-muted/30 p-8">
-        <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-primary">
+        <h2 class="text-sm font-semibold text-primary">
           Mon Panier ({{ totalItems }})
         </h2>
         <button type="button" class="p-2 transition-transform hover:rotate-90" aria-label="Fermer" @click="close">
@@ -54,10 +54,10 @@ watch(isOpen, async (open) => {
           <div class="flex h-20 w-20 items-center justify-center rounded-full bg-muted text-primary opacity-30">
             <ShoppingBag class="h-8 w-8" />
           </div>
-          <p class="text-sm font-light italic text-muted-foreground">Votre panier Tawfekh est vide.</p>
+          <p class="text-sm font-light text-muted-foreground">Votre panier Tawfekh est vide.</p>
           <button
             type="button"
-            class="border-b border-gold pb-1 text-[10px] font-bold uppercase tracking-widest text-gold"
+            class="border-b border-primary/60 pb-1 text-xs font-semibold text-primary-soft transition-colors hover:border-primary hover:text-primary"
             @click="
               close();
               navigateTo('/catalogue');
@@ -80,7 +80,7 @@ watch(isOpen, async (open) => {
           </div>
           <div class="min-w-0 flex-1 space-y-3 text-foreground">
             <div class="flex items-start justify-between gap-4">
-              <h3 class="truncate text-xs font-bold uppercase tracking-wide leading-relaxed">
+              <h3 class="truncate text-sm font-semibold leading-relaxed">
                 {{ line.product.name }}
               </h3>
               <button
@@ -120,18 +120,18 @@ watch(isOpen, async (open) => {
 
       <div v-if="items.length > 0" class="space-y-6 border-t border-border bg-muted/30 p-8 shadow-inner">
         <div class="flex items-center justify-between">
-          <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Total commande</span>
+          <span class="text-xs font-medium text-muted-foreground">Total commande</span>
           <span class="text-xl font-bold tracking-tight text-primary">{{ formatPrice(totalPrice) }}</span>
         </div>
         <NuxtLink
           to="/panier"
-          class="flex w-full items-center justify-center gap-3 rounded-sm bg-primary py-5 text-[11px] font-bold uppercase tracking-[0.2em] text-primary-foreground shadow-2xl transition-all hover:bg-foreground hover:text-background"
+          class="flex w-full items-center justify-center gap-3 rounded-sm bg-primary py-5 text-sm font-semibold text-primary-foreground shadow-2xl transition-all hover:bg-foreground hover:text-background"
         >
           Valider mon Tawfekh <ChevronRight class="h-4 w-4" />
         </NuxtLink>
         <NuxtLink
           to="/catalogue"
-          class="block text-center text-[10px] font-bold uppercase tracking-widest text-muted-foreground underline-offset-4 hover:text-primary"
+          class="block text-center text-xs font-medium text-muted-foreground underline-offset-4 hover:text-primary"
         >
           Continuer mes achats
         </NuxtLink>

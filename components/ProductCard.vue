@@ -79,10 +79,10 @@ const cardRootClass = computed(() =>
 
       <span
         v-if="!product.inStock"
-        class="absolute left-4 top-4 border border-border bg-card/95 px-3 py-1 text-[8px] font-bold uppercase tracking-[0.2em] text-card-foreground shadow-sm backdrop-blur-sm"
+        class="absolute left-4 top-4 border border-border bg-card/95 px-3 py-1 text-[10px] font-semibold text-card-foreground shadow-sm backdrop-blur-sm"
         :class="
           compact
-            ? 'max-md:left-3 max-md:top-3 max-md:px-2 max-md:py-0.5 max-md:text-[7px] max-md:tracking-[0.15em]'
+            ? 'max-md:left-3 max-md:top-3 max-md:px-2 max-md:py-0.5 max-md:text-[9px]'
             : ''
         "
       >
@@ -91,10 +91,10 @@ const cardRootClass = computed(() =>
 
       <span
         v-if="product.isNew && product.inStock"
-        class="absolute left-4 top-4 rounded-sm bg-primary px-3 py-1 text-[8px] font-bold uppercase tracking-[0.15em] text-primary-foreground shadow-sm"
+        class="absolute left-4 top-4 rounded-sm bg-primary px-3 py-1 text-[10px] font-semibold text-primary-foreground shadow-sm"
         :class="
           compact
-            ? 'max-md:left-3 max-md:top-3 max-md:px-2 max-md:py-0.5 max-md:text-[7px] max-md:tracking-[0.12em]'
+            ? 'max-md:left-3 max-md:top-3 max-md:px-2 max-md:py-0.5 max-md:text-[9px]'
             : ''
         "
       >
@@ -103,7 +103,7 @@ const cardRootClass = computed(() =>
 
       <button
         type="button"
-        class="absolute bottom-6 left-6 right-6 flex translate-y-20 items-center justify-center gap-3 bg-primary py-4 text-[10px] font-bold uppercase tracking-widest text-primary-foreground shadow-2xl transition-transform duration-luxury ease-luxury group-hover:translate-y-0 disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground"
+        class="absolute bottom-6 left-6 right-6 flex translate-y-20 items-center justify-center gap-3 bg-primary py-4 text-sm font-semibold text-primary-foreground shadow-2xl transition-transform duration-luxury ease-luxury group-hover:translate-y-0 disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground"
         :class="
           compact
             ? 'max-md:bottom-4 max-md:left-3 max-md:right-3 max-md:gap-2 max-md:py-3 max-md:text-[9px]'
@@ -146,10 +146,10 @@ const cardRootClass = computed(() =>
     >
       <div class="flex items-start justify-between gap-2">
         <p
-          class="min-w-0 text-[9px] font-bold uppercase tracking-[0.3em] md:text-[10px]"
+          class="min-w-0 text-[10px] font-medium md:text-[11px]"
           :class="[
             variant === 'dark' ? 'text-white/70' : 'text-primary opacity-70',
-            compact ? 'max-md:truncate max-md:text-[8px] max-md:tracking-[0.2em]' : '',
+            compact ? 'max-md:truncate max-md:text-[9px]' : '',
           ]"
         >
           {{ label }}
@@ -166,7 +166,7 @@ const cardRootClass = computed(() =>
         </div>
       </div>
       <h3
-        class="line-clamp-1 font-serif text-sm uppercase tracking-wider transition-colors duration-luxury ease-luxury group-hover:text-gold md:text-base"
+        class="line-clamp-1 font-serif text-sm tracking-tight transition-colors duration-luxury ease-luxury group-hover:text-primary-soft md:text-base"
         :class="
           compact
             ? 'max-md:line-clamp-2 max-md:text-xs max-md:leading-tight md:line-clamp-1'

@@ -81,7 +81,7 @@ const hasVisibleContent = computed(
     >
       <p
         v-if="overlayEyebrow"
-        class="text-[10px] font-bold uppercase tracking-[0.4em] text-gold md:text-xs"
+        class="text-[10px] font-semibold uppercase tracking-[0.3em] text-primary-soft md:text-xs"
       >
         {{ overlayEyebrow }}
       </p>

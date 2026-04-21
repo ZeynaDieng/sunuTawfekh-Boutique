@@ -43,13 +43,13 @@ const heroImageUrl =
     >
       <h2
         id="hero-heading"
-        class="motion-safe:animate-st-rise text-balance font-serif text-3xl uppercase leading-[1.08] tracking-tight drop-shadow-md md:text-7xl md:drop-shadow-none lg:text-8xl"
+        class="motion-safe:animate-st-rise text-balance font-serif text-3xl leading-[1.08] tracking-tight drop-shadow-md md:text-7xl md:drop-shadow-none lg:text-8xl"
       >
         L’Élégance <br class="hidden md:block" />
         par Tawfekh
       </h2>
       <p
-        class="motion-safe:animate-st-rise-delay-1 mx-auto max-w-lg px-2 text-sm font-light leading-[1.65] tracking-[0.08em] opacity-90 md:max-w-xl md:px-4 md:text-lg md:leading-[1.7] md:tracking-[0.1em]"
+        class="motion-safe:animate-st-rise-delay-1 mx-auto max-w-lg px-2 text-sm font-light leading-[1.65] opacity-90 md:max-w-xl md:px-4 md:text-lg md:leading-[1.7]"
       >
         Une curation exclusive mêlant indigo royal et éclats dorés pour un art
         de vivre d’exception au Sénégal.
@@ -59,7 +59,7 @@ const heroImageUrl =
       >
         <NuxtLink
           to="/catalogue"
-          class="inline-flex items-center justify-center bg-primary px-8 py-4 text-[10px] font-bold uppercase tracking-[0.2em] text-primary-foreground shadow-xl transition-all duration-luxury ease-luxury hover:bg-gold hover:text-white md:px-12 md:py-5 md:text-xs"
+          class="inline-flex items-center justify-center bg-primary px-8 py-4 text-xs font-semibold text-primary-foreground shadow-xl transition-all duration-luxury ease-luxury hover:bg-primary/90 hover:text-primary-foreground md:px-12 md:py-5 md:text-sm"
         >
           Explorer l’univers
         </NuxtLink>

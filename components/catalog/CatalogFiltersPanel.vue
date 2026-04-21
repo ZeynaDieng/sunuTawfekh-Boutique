@@ -45,13 +45,13 @@ function onPriceMaxSlider(e: Event) {
     <div>
       <h3
         v-if="variant !== 'drawer'"
-        class="mb-8 flex items-center justify-between border-b border-border pb-2 text-[11px] font-bold uppercase tracking-[0.3em] text-foreground"
+        class="mb-8 flex items-center justify-between border-b border-border pb-2 text-xs font-semibold tracking-wide text-foreground"
       >
         Prix <ChevronDown class="h-3.5 w-3.5 text-foreground" />
       </h3>
 
       <div v-if="variant === 'drawer'" class="space-y-4">
-        <label class="mb-4 block text-[10px] font-bold uppercase tracking-widest text-gray-400">
+        <label class="mb-4 block text-xs font-medium text-muted-foreground">
           Prix max&nbsp;:
           <span class="text-gold">{{ formatPrice(priceRange[1]) }}</span>
         </label>
@@ -87,7 +87,7 @@ function onPriceMaxSlider(e: Event) {
     <div>
       <h3
         v-if="variant !== 'drawer'"
-        class="mb-8 border-b border-border pb-2 text-[11px] font-bold uppercase tracking-[0.3em] text-foreground"
+        class="mb-8 border-b border-border pb-2 text-xs font-semibold tracking-wide text-foreground"
       >
         Catégories
       </h3>
@@ -98,7 +98,7 @@ function onPriceMaxSlider(e: Event) {
       >
         <button
           type="button"
-          class="border py-4 text-[10px] font-bold uppercase tracking-widest transition-all"
+          class="border py-4 text-xs font-semibold transition-all"
           :class="
             !activeCat
               ? 'border-primary bg-primary text-white'
@@ -112,7 +112,7 @@ function onPriceMaxSlider(e: Event) {
           v-for="cat in categories"
           :key="cat.id"
           type="button"
-          class="border py-4 text-[10px] font-bold uppercase tracking-widest transition-all"
+          class="border py-4 text-xs font-semibold transition-all"
           :class="
             activeCat === cat.id
               ? 'border-primary bg-primary text-white'
@@ -127,7 +127,7 @@ function onPriceMaxSlider(e: Event) {
       <div v-else class="space-y-3">
         <button
           type="button"
-          class="block w-full text-left text-[11px] uppercase tracking-widest transition-colors"
+          class="block w-full text-left text-sm transition-colors"
           :class="
             !activeCat
               ? 'font-bold text-primary'
@@ -141,7 +141,7 @@ function onPriceMaxSlider(e: Event) {
           v-for="cat in categories"
           :key="cat.id"
           type="button"
-          class="block w-full text-left text-[11px] uppercase tracking-widest transition-colors"
+          class="block w-full text-left text-sm transition-colors"
           :class="
             activeCat === cat.id
               ? 'font-bold text-primary'

@@ -33,7 +33,7 @@ useSeoMeta({
       <div class="mx-auto max-w-7xl px-4 md:px-8">
         <NuxtLink
           to="/catalogue"
-          class="mb-10 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-primary"
+          class="mb-10 inline-flex items-center gap-2 text-xs font-medium text-muted-foreground transition-colors hover:text-primary"
         >
           <ArrowLeft class="h-4 w-4" /> Retour à la boutique
         </NuxtLink>
@@ -44,16 +44,16 @@ useSeoMeta({
           >
             <ShoppingBag class="h-10 w-10" stroke-width="1.25" />
           </div>
-          <p class="mb-2 text-[10px] font-bold uppercase tracking-[0.28em] text-primary">Votre sélection</p>
-          <h1 class="mb-3 font-serif text-2xl uppercase tracking-[0.12em] text-primary md:text-3xl">
+          <p class="mb-2 text-xs font-medium text-primary">Votre sélection</p>
+          <h1 class="mb-3 font-serif text-2xl tracking-tight text-primary md:text-3xl">
             Panier vide
           </h1>
-          <p class="mb-10 max-w-sm text-sm font-light italic leading-relaxed text-muted-foreground">
+          <p class="mb-10 max-w-sm text-sm font-light leading-relaxed text-muted-foreground">
             Découvrez nos collections et ajoutez vos coups de cœur à votre panier Tawfekh.
           </p>
           <NuxtLink
             to="/catalogue"
-            class="inline-flex items-center gap-2 border-b border-gold pb-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-gold transition-colors hover:text-primary"
+            class="inline-flex items-center gap-2 border-b border-primary/60 pb-1.5 text-xs font-semibold text-primary-soft transition-colors hover:border-primary hover:text-primary"
           >
             Commencer mon shopping <ChevronRight class="h-3.5 w-3.5" />
           </NuxtLink>
@@ -66,17 +66,17 @@ useSeoMeta({
       <div class="mx-auto max-w-3xl px-4 md:px-8">
         <NuxtLink
           to="/catalogue"
-          class="mb-10 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-primary"
+          class="mb-10 inline-flex items-center gap-2 text-xs font-medium text-muted-foreground transition-colors hover:text-primary"
         >
           <ArrowLeft class="h-4 w-4" /> Retour à la boutique
         </NuxtLink>
 
         <header class="mb-10 text-center md:text-left">
-          <p class="mb-2 text-[10px] font-bold uppercase tracking-[0.28em] text-primary">Votre sélection</p>
-          <h1 class="font-serif text-2xl uppercase tracking-[0.1em] text-primary md:text-4xl">Panier</h1>
+          <p class="mb-2 text-xs font-medium text-primary">Votre sélection</p>
+          <h1 class="font-serif text-2xl tracking-tight text-primary md:text-4xl">Panier</h1>
           <div class="mt-3 flex flex-wrap items-center justify-center gap-2 md:justify-start">
             <span class="h-0.5 w-8 bg-gold" aria-hidden="true" />
-            <span class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+            <span class="text-xs font-medium text-muted-foreground">
               {{ totalItems }} article{{ totalItems !== 1 ? "s" : "" }}
             </span>
           </div>
@@ -109,7 +109,7 @@ useSeoMeta({
                 <div class="flex items-start justify-between gap-3">
                   <NuxtLink
                     :to="`/produit/${item.product.id}`"
-                    class="truncate text-left text-xs font-bold uppercase tracking-wide leading-relaxed text-foreground transition-colors hover:text-primary"
+                    class="truncate text-left text-sm font-semibold leading-relaxed text-foreground transition-colors hover:text-primary"
                   >
                     {{ item.product.name }}
                   </NuxtLink>
@@ -158,7 +158,7 @@ useSeoMeta({
 
         <div class="mt-8 space-y-6 rounded-sm border border-border bg-card p-6 shadow-inner md:p-8">
           <div class="flex items-center justify-between gap-4">
-            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+            <span class="text-xs font-medium text-muted-foreground">
               Total commande
             </span>
             <span class="text-xl font-bold tracking-tight text-primary md:text-2xl">
@@ -168,14 +168,14 @@ useSeoMeta({
 
           <NuxtLink
             to="/checkout"
-            class="flex w-full items-center justify-center gap-3 rounded-sm bg-primary py-5 text-[11px] font-bold uppercase tracking-[0.2em] text-primary-foreground shadow-2xl transition-all hover:bg-foreground hover:text-background"
+            class="flex w-full items-center justify-center gap-3 rounded-sm bg-primary py-5 text-sm font-semibold text-primary-foreground shadow-2xl transition-all hover:bg-foreground hover:text-background"
           >
             Passer commande <ArrowRight class="h-4 w-4" />
           </NuxtLink>
 
           <NuxtLink
             to="/catalogue"
-            class="block text-center text-[10px] font-bold uppercase tracking-widest text-muted-foreground underline-offset-4 transition-colors hover:text-primary"
+            class="block text-center text-xs font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-primary"
           >
             Continuer mes achats
           </NuxtLink>

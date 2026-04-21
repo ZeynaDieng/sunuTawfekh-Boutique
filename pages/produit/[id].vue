@@ -167,7 +167,7 @@ useSeoMeta({
       <div class="mx-auto max-w-7xl px-4 md:px-8">
         <NuxtLink
           to="/catalogue"
-          class="mb-6 inline-flex min-h-11 items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-primary md:mb-10 lg:mb-12"
+          class="mb-6 inline-flex min-h-11 items-center gap-2 text-xs font-medium text-muted-foreground transition-colors hover:text-primary md:mb-10 lg:mb-12"
         >
           <ArrowLeft class="h-4 w-4 shrink-0" /> Retour à la boutique
         </NuxtLink>
@@ -247,19 +247,19 @@ useSeoMeta({
             <div class="space-y-3 md:space-y-4">
               <div class="flex flex-wrap items-center gap-2 md:gap-3">
                 <span
-                  class="rounded-full bg-primary/5 px-3 py-1 text-[9px] font-bold uppercase tracking-widest text-primary"
+                  class="rounded-full bg-primary/5 px-3 py-1 text-[11px] font-semibold text-primary"
                 >
                   {{ categoryLabel }}
                 </span>
                 <span
                   v-if="showBioBadge"
-                  class="rounded-full bg-gold/10 px-3 py-1 text-[9px] font-bold uppercase italic tracking-widest text-gold"
+                  class="rounded-full bg-gold/10 px-3 py-1 text-[11px] font-semibold text-gold"
                 >
                   Naturel &amp; Bio
                 </span>
               </div>
               <h1
-                class="text-balance font-serif text-2xl font-normal uppercase leading-[1.15] tracking-widest text-foreground sm:text-[1.65rem] md:text-4xl lg:text-5xl"
+                class="text-balance font-serif text-2xl font-normal leading-[1.15] tracking-tight text-foreground sm:text-[1.65rem] md:text-4xl lg:text-5xl"
               >
                 {{ product.name }}
               </h1>
@@ -286,7 +286,7 @@ useSeoMeta({
             <div class="hidden gap-3 lg:flex lg:flex-row lg:gap-4">
               <button
                 type="button"
-                class="flex min-h-12 flex-1 items-center justify-center gap-3 rounded-sm bg-primary py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-primary-foreground shadow-xl transition-all hover:bg-foreground hover:text-background active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground md:py-5"
+                class="flex min-h-12 flex-1 items-center justify-center gap-3 rounded-sm bg-primary py-4 text-sm font-semibold text-primary-foreground shadow-xl transition-all hover:bg-foreground hover:text-background active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground md:py-5"
                 :disabled="!product.inStock"
                 @click="onAddToCart"
               >
@@ -306,7 +306,7 @@ useSeoMeta({
               :href="`https://wa.me/221770000000?text=${whatsappMsg}`"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex min-h-12 w-full items-center justify-center gap-3 rounded-sm bg-[#25D366] px-4 py-4 text-[10px] font-bold uppercase tracking-[0.18em] text-white shadow-lg transition-all active:scale-[0.99] hover:opacity-90 sm:text-[11px] sm:tracking-[0.2em] md:py-5"
+              class="flex min-h-12 w-full items-center justify-center gap-3 rounded-sm bg-[#25D366] px-4 py-4 text-sm font-semibold text-white shadow-lg transition-all active:scale-[0.99] hover:opacity-90 md:py-5"
             >
               <MessageCircle class="h-5 w-5 shrink-0" /> WhatsApp
             </a>
@@ -314,7 +314,7 @@ useSeoMeta({
             <div class="space-y-4 border-t border-border pt-6 md:space-y-6 md:pt-10">
               <details class="group rounded-lg border border-border bg-card/30 md:border-0 md:bg-transparent" open>
                 <summary
-                  class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-3 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-primary md:min-h-0 md:px-0 md:py-0 [&::-webkit-details-marker]:hidden"
+                  class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-3 py-3 text-sm font-semibold text-primary md:min-h-0 md:px-0 md:py-0 [&::-webkit-details-marker]:hidden"
                 >
                   L’engagement Sunu Tawfekh
                   <ChevronDown class="h-4 w-4 shrink-0 transition-transform group-open:rotate-180" />
@@ -326,7 +326,7 @@ useSeoMeta({
               </details>
 
               <div v-if="Object.keys(product.filters).length > 0" class="space-y-3">
-                <h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-primary">Caractéristiques</h3>
+                <h3 class="text-sm font-semibold text-primary">Caractéristiques</h3>
                 <dl class="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-2">
                   <div
                     v-for="(val, key) in product.filters"
@@ -343,7 +343,7 @@ useSeoMeta({
         </div>
 
         <div v-if="similar.length > 0" class="mt-14 md:mt-24">
-          <h2 class="mb-5 font-serif text-xl uppercase tracking-widest text-primary md:mb-6 md:text-3xl">
+          <h2 class="mb-5 font-serif text-xl text-primary md:mb-6 md:text-3xl">
             À découvrir aussi
           </h2>
           <div class="grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-8 sm:gap-y-12 xl:grid-cols-4">
@@ -361,7 +361,7 @@ useSeoMeta({
       <div class="mx-auto flex max-w-7xl gap-3">
         <button
           type="button"
-          class="flex min-h-12 flex-1 items-center justify-center gap-2 rounded-sm bg-primary text-[10px] font-bold uppercase tracking-[0.18em] text-primary-foreground shadow-lg active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground"
+          class="flex min-h-12 flex-1 items-center justify-center gap-2 rounded-sm bg-primary text-sm font-semibold text-primary-foreground shadow-lg active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground"
           :disabled="!product.inStock"
           @click="onAddToCart"
         >

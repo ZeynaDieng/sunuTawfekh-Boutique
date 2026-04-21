@@ -81,7 +81,7 @@ onBeforeUnmount(() => {
       <div class="flex min-w-0 max-w-[100%] items-center gap-1.5 sm:gap-4 lg:max-w-none max-lg:min-w-0 max-lg:flex-1">
         <button
           type="button"
-          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white transition-colors hover:bg-white/10 hover:text-gold active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold sm:h-11 sm:w-11 dark:text-foreground dark:hover:bg-muted/80 lg:hidden"
+          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white transition-colors hover:bg-white/10 hover:text-primary-soft active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold sm:h-11 sm:w-11 dark:text-foreground dark:hover:bg-muted/80 lg:hidden"
           aria-label="Ouvrir le menu"
           :aria-expanded="menuOpen"
           aria-controls="mobile-nav-drawer"
@@ -94,21 +94,21 @@ onBeforeUnmount(() => {
           class="min-w-0 text-left text-white max-lg:flex-1 max-lg:basis-0 dark:text-foreground"
         >
           <span
-            class="block min-w-0 truncate pe-0.5 font-serif text-base uppercase tracking-[0.1em] transition-colors hover:text-gold md:text-xl lg:text-2xl"
+            class="block min-w-0 truncate pe-0.5 font-serif text-base tracking-tight transition-colors hover:text-primary-soft md:text-xl lg:text-2xl"
           >
             {{ BRAND_NAME }}
-            <span class="hidden text-gold sm:inline"> {{ BRAND_TAGLINE }}</span>
+            <span class="hidden text-primary-soft sm:inline"> {{ BRAND_TAGLINE }}</span>
           </span>
         </NuxtLink>
       </div>
 
-      <div class="hidden gap-8 text-[11px] font-bold uppercase tracking-[0.2em] text-white lg:flex dark:text-foreground">
+      <div class="hidden gap-8 text-sm font-medium text-white lg:flex dark:text-foreground">
         <NuxtLink
           v-for="cat in HOME_CATEGORIES"
           :key="cat.id"
           :to="`/catalogue?cat=${cat.id}`"
-          class="relative py-1 transition-all hover:text-gold dark:hover:text-gold"
-          :class="isCatActive(cat.id) ? 'text-gold' : 'text-white/90 dark:text-muted-foreground'"
+          class="relative py-1 transition-all hover:text-primary-soft dark:hover:text-primary-soft"
+          :class="isCatActive(cat.id) ? 'text-primary-soft' : 'text-white/90 dark:text-muted-foreground'"
         >
           {{ cat.name }}
           <span
@@ -121,7 +121,7 @@ onBeforeUnmount(() => {
       <div class="flex shrink-0 items-center gap-px sm:gap-1.5 md:gap-3">
         <button
           type="button"
-          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white transition-colors hover:bg-white/10 hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold sm:h-11 sm:w-11 dark:text-foreground dark:hover:bg-muted/80"
+          class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white transition-colors hover:bg-white/10 hover:text-primary-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold sm:h-11 sm:w-11 dark:text-foreground dark:hover:bg-muted/80"
           :aria-label="isDark ? 'Passer en thème clair' : 'Passer en thème sombre'"
           @click="toggleTheme"
         >
@@ -130,14 +130,14 @@ onBeforeUnmount(() => {
         </button>
         <NuxtLink
           to="/catalogue"
-          class="flex h-10 w-10 shrink-0 items-center justify-center text-white transition-colors hover:text-gold sm:h-11 sm:w-11 dark:text-foreground"
+          class="flex h-10 w-10 shrink-0 items-center justify-center text-white transition-colors hover:text-primary-soft sm:h-11 sm:w-11 dark:text-foreground"
           aria-label="Recherche et catalogue"
         >
           <Search class="h-5 w-5" />
         </NuxtLink>
         <NuxtLink
           to="/wishlist"
-          class="relative flex h-10 w-10 shrink-0 items-center justify-center text-white transition-colors hover:text-gold sm:h-11 sm:w-11 dark:text-foreground"
+          class="relative flex h-10 w-10 shrink-0 items-center justify-center text-white transition-colors hover:text-primary-soft sm:h-11 sm:w-11 dark:text-foreground"
           aria-label="Favoris"
         >
           <Heart class="h-5 w-5" />
@@ -150,7 +150,7 @@ onBeforeUnmount(() => {
         </NuxtLink>
         <button
           type="button"
-          class="relative flex h-10 w-10 shrink-0 items-center justify-center text-white transition-colors hover:text-gold sm:h-11 sm:w-11 dark:text-foreground"
+          class="relative flex h-10 w-10 shrink-0 items-center justify-center text-white transition-colors hover:text-primary-soft sm:h-11 sm:w-11 dark:text-foreground"
           aria-label="Panier"
           @click="openCart()"
         >
@@ -192,8 +192,8 @@ onBeforeUnmount(() => {
             class="flex shrink-0 items-center justify-between gap-4 border-b border-border bg-card px-4 py-4 pt-[max(1rem,env(safe-area-inset-top))]"
           >
             <div class="min-w-0">
-              <p class="text-[10px] font-semibold uppercase tracking-[0.35em] text-gold">Menu</p>
-              <p class="mt-0.5 truncate font-serif text-lg uppercase tracking-[0.14em] text-primary">
+              <p class="text-xs font-medium text-primary-soft">Menu</p>
+              <p class="mt-0.5 truncate font-serif text-lg tracking-tight text-primary">
                 {{ BRAND_NAME }}
               </p>
             </div>
@@ -240,7 +240,7 @@ onBeforeUnmount(() => {
                 />
                 <button
                   type="submit"
-                  class="shrink-0 rounded-lg bg-primary px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white"
+                  class="shrink-0 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-white"
                 >
                   OK
                 </button>
@@ -258,7 +258,7 @@ onBeforeUnmount(() => {
                     @click="menuOpen = false"
                   >
                     <Home class="h-5 w-5 shrink-0 text-primary" :stroke-width="1.75" />
-                    <span class="uppercase tracking-[0.12em]">Accueil</span>
+                    <span>Accueil</span>
                   </NuxtLink>
                 </li>
                 <li>
@@ -268,7 +268,7 @@ onBeforeUnmount(() => {
                     @click="menuOpen = false"
                   >
                     <LayoutGrid class="h-5 w-5 shrink-0 text-primary" :stroke-width="1.75" />
-                    <span class="uppercase tracking-[0.12em]">Boutique</span>
+                    <span>Boutique</span>
                   </NuxtLink>
                 </li>
                 <li>
@@ -278,7 +278,7 @@ onBeforeUnmount(() => {
                     @click="menuOpen = false"
                   >
                     <Heart class="h-5 w-5 shrink-0 text-primary" :stroke-width="1.75" />
-                    <span class="uppercase tracking-[0.12em]">Favoris</span>
+                    <span>Favoris</span>
                   </NuxtLink>
                 </li>
                 <li>
@@ -288,7 +288,7 @@ onBeforeUnmount(() => {
                     @click="menuOpen = false"
                   >
                     <ShoppingBag class="h-5 w-5 shrink-0 text-primary" :stroke-width="1.75" />
-                    <span class="uppercase tracking-[0.12em]">Panier</span>
+                    <span>Panier</span>
                     <span
                       v-if="totalItems > 0"
                       class="ml-auto flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-primary px-1.5 text-[10px] font-bold text-white"
@@ -301,7 +301,7 @@ onBeforeUnmount(() => {
             </nav>
 
             <nav class="bg-card px-4 pb-4 pt-2" aria-label="Collections">
-              <p class="mb-2 px-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+              <p class="mb-2 px-1 text-xs font-medium text-muted-foreground">
                 Collections
               </p>
               <ul class="space-y-0.5">
@@ -317,12 +317,12 @@ onBeforeUnmount(() => {
                     @click="menuOpen = false"
                   >
                     <span class="text-base" aria-hidden="true">{{ cat.icon }}</span>
-                    <span class="min-w-0 flex-1 text-[13px] font-semibold uppercase tracking-[0.08em]">
+                    <span class="min-w-0 flex-1 text-[13px] font-semibold">
                       {{ cat.name }}
                     </span>
                     <ChevronRight
                       class="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5"
-                      :class="isCatActive(cat.id) ? 'text-gold' : ''"
+                      :class="isCatActive(cat.id) ? 'text-primary-soft' : ''"
                       :stroke-width="2"
                     />
                   </NuxtLink>
@@ -330,7 +330,7 @@ onBeforeUnmount(() => {
               </ul>
               <NuxtLink
                 to="/catalogue"
-                class="mt-3 flex items-center justify-center gap-2 rounded-lg border border-border bg-muted/50 px-3 py-3 text-center text-[11px] font-bold uppercase tracking-[0.15em] text-primary transition-colors hover:border-primary hover:bg-background"
+                class="mt-3 flex items-center justify-center gap-2 rounded-lg border border-border bg-muted/50 px-3 py-3 text-center text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-background"
                 @click="menuOpen = false"
               >
                 <Search class="h-4 w-4 shrink-0" :stroke-width="2" />
@@ -342,7 +342,7 @@ onBeforeUnmount(() => {
           <footer
             class="shrink-0 border-t border-border bg-muted/30 px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]"
           >
-            <p class="mb-2 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+            <p class="mb-2 text-center text-xs font-medium text-muted-foreground">
               Suivez-nous
             </p>
             <div class="flex justify-center gap-6 text-xs font-semibold text-primary">

@@ -182,7 +182,7 @@ useSeoMeta({
         >
           <div class="max-w-md md:text-left">
             <h3
-              class="mb-5 font-serif text-2xl uppercase tracking-widest text-primary md:mb-6 md:text-4xl"
+              class="mb-5 font-serif text-2xl text-primary md:mb-6 md:text-4xl"
             >
               Nos univers
             </h3>
@@ -195,7 +195,7 @@ useSeoMeta({
           </div>
           <NuxtLink
             to="/catalogue"
-            class="border-b border-primary pb-1 text-[10px] font-bold uppercase tracking-widest transition-colors duration-luxury ease-luxury hover:border-gold hover:text-gold"
+            class="border-b border-primary pb-1 text-xs font-semibold transition-colors duration-luxury ease-luxury hover:border-primary/70 hover:text-primary"
           >
             Découvrir la collection
           </NuxtLink>
@@ -207,14 +207,14 @@ useSeoMeta({
             v-for="cat in HOME_CATEGORIES"
             :key="cat.id"
             :to="`/catalogue?cat=${cat.id}`"
-            class="group flex cursor-pointer flex-col items-center rounded-sm border border-border bg-card p-5 transition-all duration-luxury ease-luxury hover:scale-[1.02] hover:border-gold hover:bg-muted/50 hover:shadow-2xl sm:p-7 md:p-11"
+            class="group flex cursor-pointer flex-col items-center rounded-sm border border-border bg-card p-5 transition-all duration-luxury ease-luxury hover:scale-[1.02] hover:border-primary/60 hover:bg-muted/50 hover:shadow-2xl sm:p-7 md:p-11"
           >
             <span
               class="mb-5 text-3xl transition-transform duration-luxury ease-luxury group-hover:scale-110 md:mb-6 md:text-4xl"
               >{{ cat.icon }}</span
             >
             <span
-              class="text-center text-[10px] font-bold uppercase tracking-[0.2em] transition-colors duration-luxury ease-luxury group-hover:text-primary"
+              class="text-center text-xs font-semibold transition-colors duration-luxury ease-luxury group-hover:text-primary"
               >{{ cat.name }}</span
             >
           </NuxtLink>
@@ -236,10 +236,10 @@ useSeoMeta({
       <div class="relative z-10 mx-auto max-w-7xl">
         <div class="mb-16 space-y-5 text-center md:mb-20 md:space-y-6">
           <span
-            class="text-[10px] font-bold uppercase tracking-[0.4em] text-gold"
+            class="text-xs font-semibold tracking-wide text-primary-soft"
             >Exclusivités Sunu Tawfekh</span
           >
-          <h3 class="font-serif text-3xl uppercase tracking-widest md:text-5xl">
+          <h3 class="font-serif text-3xl md:text-5xl">
             Nouveautés
           </h3>
         </div>
@@ -313,13 +313,13 @@ useSeoMeta({
       <div class="relative z-10 mx-auto max-w-7xl">
         <div class="mx-auto max-w-xl text-center md:max-w-2xl">
           <p
-            class="mb-5 text-[10px] font-bold uppercase tracking-[0.35em] text-gold md:mb-6"
+            class="mb-5 text-xs font-semibold tracking-wide text-primary-soft md:mb-6"
           >
             L’esprit Sunu Tawfekh
           </p>
 
           <h2
-            class="mb-8 font-serif text-2xl uppercase tracking-widest text-white md:mb-10 md:text-4xl"
+            class="mb-8 font-serif text-2xl text-white md:mb-10 md:text-4xl"
           >
             Une maison de sélection, pas un simple catalogue
           </h2>
@@ -347,19 +347,19 @@ useSeoMeta({
         >
           <div class="max-w-lg md:text-left">
             <p
-              class="mb-4 text-[10px] font-bold uppercase tracking-[0.35em] text-primary"
+              class="mb-4 text-xs font-semibold tracking-wide text-primary"
             >
               Qualité &amp; confiance
             </p>
             <h3
-              class="font-serif text-2xl uppercase tracking-widest text-foreground md:text-4xl"
+              class="font-serif text-2xl text-foreground md:text-4xl"
             >
               Sélection phares
             </h3>
           </div>
           <NuxtLink
             to="/catalogue"
-            class="inline-flex items-center gap-2 border-b border-primary pb-1 text-[10px] font-bold uppercase tracking-widest text-primary transition-colors duration-luxury ease-luxury hover:border-gold hover:text-gold"
+            class="inline-flex items-center gap-2 border-b border-primary pb-1 text-xs font-semibold text-primary transition-colors duration-luxury ease-luxury hover:border-primary/70 hover:text-primary"
           >
             Explorer la boutique
             <ArrowRight class="h-3.5 w-3.5" />
@@ -406,12 +406,12 @@ useSeoMeta({
       <div class="relative z-10 mx-auto max-w-7xl">
         <div class="mb-14 text-center md:mb-20">
           <p
-            class="mb-5 text-[10px] font-bold uppercase tracking-[0.35em] text-gold md:mb-6"
+            class="mb-5 text-xs font-semibold tracking-wide text-primary-soft md:mb-6"
           >
             Elles &amp; ils en parlent
           </p>
           <h3
-            class="font-serif text-2xl uppercase tracking-widest text-white md:text-3xl"
+            class="font-serif text-2xl text-white md:text-3xl"
           >
             La communauté Tawfekh
           </h3>
@@ -448,7 +448,7 @@ useSeoMeta({
                   </p>
                   <footer>
                     <p
-                      class="text-[10px] font-bold uppercase tracking-[0.2em] text-gold"
+                      class="text-xs font-semibold text-primary-soft"
                     >
                       {{ t.author }}
                     </p>
@@ -483,7 +483,7 @@ useSeoMeta({
           >
             <Truck class="h-6 w-6" />
           </div>
-          <h4 class="text-[11px] font-bold uppercase tracking-widest">
+          <h4 class="text-sm font-semibold">
             Livraison Tawfekh
           </h4>
           <p
@@ -499,7 +499,7 @@ useSeoMeta({
           >
             <ShieldCheck class="h-6 w-6" />
           </div>
-          <h4 class="text-[11px] font-bold uppercase tracking-widest">
+          <h4 class="text-sm font-semibold">
             Produits authentiques
           </h4>
           <p
@@ -515,7 +515,7 @@ useSeoMeta({
           >
             <CreditCard class="h-6 w-6" />
           </div>
-          <h4 class="text-[11px] font-bold uppercase tracking-widest">
+          <h4 class="text-sm font-semibold">
             Paiement à la livraison
           </h4>
           <p

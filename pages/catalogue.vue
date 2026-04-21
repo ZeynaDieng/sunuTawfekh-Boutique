@@ -287,12 +287,12 @@ useSeoMeta({
         <div class="mb-12 flex flex-col gap-6">
           <div class="flex flex-wrap items-center justify-between gap-4">
             <div class="min-w-0">
-              <h1 class="text-balance font-serif text-2xl uppercase tracking-[0.1em] text-primary md:text-4xl">
+              <h1 class="text-balance font-serif text-2xl tracking-tight text-primary md:text-4xl">
                 {{ categoryTitle }}
               </h1>
               <div class="mt-2 flex items-center gap-2">
                 <span class="h-0.5 w-8 bg-gold" aria-hidden="true" />
-                <span class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+                <span class="text-xs font-medium text-muted-foreground">
                   <template v-if="pending">Chargement…</template>
                   <template v-else>{{ totalCount }} article{{ totalCount !== 1 ? "s" : "" }} sélectionné{{ totalCount !== 1 ? "s" : "" }}</template>
                 </span>
@@ -300,7 +300,7 @@ useSeoMeta({
             </div>
             <button
               type="button"
-              class="flex items-center gap-2 border border-border bg-card p-3 text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-primary hover:text-primary-foreground lg:hidden"
+              class="flex items-center gap-2 border border-border bg-card p-3 text-xs font-semibold transition-all hover:bg-primary hover:text-primary-foreground lg:hidden"
               aria-haspopup="dialog"
               :aria-expanded="filtersOpen"
               @click="filtersOpen = true"
@@ -343,7 +343,7 @@ useSeoMeta({
             class="catalog-filters-scroll hidden w-64 shrink-0 lg:block lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:overflow-x-hidden lg:pr-1 lg:sticky lg:top-32 [scrollbar-gutter:stable]"
           >
             <div class="mb-6 hidden items-center justify-between lg:flex">
-              <h2 class="text-[11px] font-medium uppercase tracking-[0.28em] text-foreground">
+              <h2 class="text-sm font-semibold text-foreground">
                 Filtres
               </h2>
               <button
@@ -389,7 +389,7 @@ useSeoMeta({
               <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-card shadow-sm">
                 <Search class="h-6 w-6 text-muted-foreground" />
               </div>
-              <p class="text-sm font-light italic text-muted-foreground">
+              <p class="text-sm font-light text-muted-foreground">
                 <template v-if="searchQuery">
                   Aucun résultat pour « {{ searchQuery }} ». Essayez d’autres mots ou élargissez les filtres.
                 </template>
@@ -397,7 +397,7 @@ useSeoMeta({
               </p>
               <button
                 type="button"
-                class="border border-primary px-6 py-3 text-[10px] font-bold uppercase tracking-widest text-primary transition-all hover:bg-primary hover:text-white"
+                class="border border-primary px-6 py-3 text-sm font-semibold text-primary transition-all hover:bg-primary hover:text-white"
                 @click="resetFilters"
               >
                 Réinitialiser les filtres
@@ -451,7 +451,7 @@ useSeoMeta({
               @click.stop
             >
               <div class="flex shrink-0 items-center justify-between p-8 pb-4">
-                <h2 id="catalog-filters-drawer-title" class="text-sm font-bold uppercase tracking-[0.2em] text-primary">
+                <h2 id="catalog-filters-drawer-title" class="text-base font-semibold text-primary">
                   Affiner
                 </h2>
                 <button
@@ -482,7 +482,7 @@ useSeoMeta({
               <div class="shrink-0 p-8 pt-2 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
                 <button
                   type="button"
-                  class="w-full rounded-sm bg-st-black py-5 text-[10px] font-bold uppercase tracking-widest text-white shadow-2xl"
+                  class="w-full rounded-sm bg-st-black py-5 text-sm font-semibold text-white shadow-2xl"
                   @click="closeFiltersDrawer"
                 >
                   Voir les résultats
