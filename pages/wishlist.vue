@@ -38,7 +38,12 @@ useSeoMeta({
           </NuxtLink>
         </div>
         <div v-else class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <ProductCard v-for="p in wishedProducts" :key="p.id" :product="p" />
+          <ProductCard
+            v-for="p in wishedProducts"
+            :key="p.id"
+            :show-new-badge="false"
+            :product="p"
+          />
         </div>
       </div>
     </div>

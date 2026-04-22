@@ -98,11 +98,11 @@ function onPriceMaxSlider(e: Event) {
       >
         <button
           type="button"
-          class="border py-4 text-sm font-semibold transition-all"
+          class="rounded-sm border py-4 text-sm font-semibold shadow-sm transition-all duration-luxury ease-luxury"
           :class="
             !activeCat
               ? 'border-primary bg-primary text-white'
-              : 'border-border text-muted-foreground'
+              : 'border-border bg-card/70 text-muted-foreground hover:border-primary/45 hover:text-foreground'
           "
           @click="emit('setCat', undefined)"
         >
@@ -112,11 +112,11 @@ function onPriceMaxSlider(e: Event) {
           v-for="cat in categories"
           :key="cat.id"
           type="button"
-          class="border py-4 text-sm font-semibold transition-all"
+          class="rounded-sm border py-4 text-sm font-semibold shadow-sm transition-all duration-luxury ease-luxury"
           :class="
             activeCat === cat.id
               ? 'border-primary bg-primary text-white'
-              : 'border-border text-muted-foreground'
+              : 'border-border bg-card/70 text-muted-foreground hover:border-primary/45 hover:text-foreground'
           "
           @click="emit('setCat', cat.id)"
         >
@@ -131,7 +131,7 @@ function onPriceMaxSlider(e: Event) {
           :class="
             !activeCat
               ? 'font-bold text-primary'
-              : 'text-gray-400 hover:text-foreground'
+              : 'text-muted-foreground hover:text-foreground'
           "
           @click="emit('setCat', undefined)"
         >
@@ -145,7 +145,7 @@ function onPriceMaxSlider(e: Event) {
           :class="
             activeCat === cat.id
               ? 'font-bold text-primary'
-              : 'text-gray-400 hover:text-foreground'
+              : 'text-muted-foreground hover:text-foreground'
           "
           @click="emit('setCat', cat.id)"
         >
@@ -189,7 +189,7 @@ function onPriceMaxSlider(e: Event) {
   appearance: none;
   height: 4px;
   border-radius: 2px;
-  background: #eaeaea;
+  background: #e3e2e5;
 }
 .catalog-price-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -201,6 +201,7 @@ function onPriceMaxSlider(e: Event) {
   border: 2px solid #e0a83a;
   cursor: pointer;
   margin-top: -7px;
+  transition: transform 0.25s ease;
 }
 .catalog-price-slider::-webkit-slider-runnable-track {
   height: 4px;
@@ -214,6 +215,7 @@ function onPriceMaxSlider(e: Event) {
   background: #3f3c8c;
   border: 2px solid #e0a83a;
   cursor: pointer;
+  transition: transform 0.25s ease;
 }
 .catalog-price-slider::-moz-range-track {
   height: 4px;

@@ -4,6 +4,85 @@
 
 /* Homepage — entrée douce au scroll (SSR-safe : pas d’opacity 0 initial) */
 @layer utilities {
+  .premium-eyebrow {
+    @apply font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground;
+  }
+
+  .premium-heading {
+    @apply font-serif font-normal tracking-tight text-primary;
+  }
+
+  .premium-heading-strong {
+    @apply font-serif font-semibold tracking-tight text-primary;
+  }
+
+  .premium-surface {
+    @apply border border-border/60 bg-card/95 shadow-sm backdrop-blur-sm dark:border-white/15 dark:bg-white/[0.06];
+  }
+
+  .premium-light-surface {
+    @apply border border-border/70 bg-card shadow-sm;
+  }
+
+  .premium-light-panel {
+    @apply border border-border/60 bg-muted/35 shadow-sm;
+  }
+
+  .premium-glass-header {
+    @apply border-b border-border/60 bg-background/85 backdrop-blur-md;
+  }
+
+  .luxe-label {
+    @apply font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground;
+  }
+
+  .luxe-title {
+    @apply font-serif tracking-tight;
+  }
+
+  .luxe-glass {
+    @apply border border-white/20 bg-white/45 backdrop-blur-2xl;
+  }
+
+  /* Maquette « Luxury Heritage Boutique » — hero */
+  .hero-gradient-home {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.7) 100%);
+  }
+
+  /* Panneaux type maquette (avis / CTA secondaire sur fond image) */
+  .glass-panel-heritage {
+    background: rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 0.5px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .home-font-h1 {
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+
+  .home-font-h2 {
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    line-height: 1.2;
+    font-weight: 400;
+  }
+
+  .home-font-body-lg {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  .home-label-caps {
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+  }
+
   @keyframes home-reveal-up {
     from {
       opacity: 0;

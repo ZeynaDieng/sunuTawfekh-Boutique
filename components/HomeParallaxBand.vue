@@ -41,7 +41,7 @@ const hasVisibleContent = computed(
   <section
     ref="sectionRef"
     data-home-reveal
-    class="relative isolate flex min-h-[22rem] flex-col items-center justify-center overflow-hidden bg-st-black py-16 md:min-h-[min(70vh,38rem)] md:py-28 lg:min-h-[min(75vh,44rem)] lg:py-32"
+    class="relative isolate flex min-h-[24rem] flex-col items-center justify-center overflow-hidden bg-muted/40 py-20 md:min-h-[min(72vh,40rem)] md:py-28 lg:min-h-[min(76vh,46rem)] lg:py-32 dark:bg-st-black"
     :aria-hidden="!hasVisibleContent"
   >
     <h2 v-if="hasVisibleContent" class="sr-only">Section visuelle Sunu Tawfekh</h2>
@@ -67,9 +67,9 @@ const hasVisibleContent = computed(
       >
     </div>
 
-    <div class="pointer-events-none absolute inset-0 z-[1] bg-black/50" />
+    <div class="pointer-events-none absolute inset-0 z-[1] bg-white/40 dark:bg-black/50" />
     <div
-      class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/80 via-black/35 to-primary/25"
+      class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-background/85 via-background/35 to-primary/20 dark:from-black/80 dark:via-black/35 dark:to-primary/25"
     />
     <div
       class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-transparent via-transparent to-gold/[0.06]"
@@ -77,7 +77,7 @@ const hasVisibleContent = computed(
 
     <div
       v-if="hasVisibleContent"
-      class="relative z-10 mx-auto w-full max-w-3xl space-y-5 px-5 text-center text-white md:space-y-6 md:px-10"
+      class="relative z-10 mx-auto w-full max-w-3xl space-y-5 px-6 text-center text-foreground md:space-y-6 md:px-12 dark:text-white"
     >
       <p
         v-if="overlayEyebrow"
@@ -95,7 +95,7 @@ const hasVisibleContent = computed(
 
       <p
         v-if="overlaySubtitle"
-        class="mx-auto max-w-lg text-xs font-light leading-[1.75] text-white/90 md:max-w-xl md:text-sm"
+        class="mx-auto max-w-lg text-xs font-light leading-[1.75] text-foreground/85 md:max-w-xl md:text-sm dark:text-white/90"
       >
         {{ overlaySubtitle }}
       </p>

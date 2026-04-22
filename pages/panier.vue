@@ -30,7 +30,7 @@ useSeoMeta({
 
     <!-- Panier vide -->
     <div v-if="items.length === 0" class="pt-with-fixed-nav pb-12">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
+      <div class="mx-auto max-w-container-max px-6 md:px-12 xl:px-margin-x">
         <NuxtLink
           to="/catalogue"
           class="mb-10 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
@@ -63,7 +63,7 @@ useSeoMeta({
 
     <!-- Panier avec articles -->
     <div v-else class="pt-with-fixed-nav pb-12">
-      <div class="mx-auto max-w-3xl px-4 md:px-8">
+      <div class="mx-auto max-w-3xl px-6 md:px-12">
         <NuxtLink
           to="/catalogue"
           class="mb-10 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
@@ -83,7 +83,7 @@ useSeoMeta({
         </header>
 
         <div
-          class="overflow-hidden rounded-sm border border-border bg-card text-card-foreground shadow-sm ring-1 ring-primary/5"
+          class="premium-light-surface overflow-hidden rounded-sm text-card-foreground ring-1 ring-primary/5"
         >
           <div
             v-for="item in items"
@@ -156,7 +156,7 @@ useSeoMeta({
           </div>
         </div>
 
-        <div class="mt-8 space-y-6 rounded-sm border border-border bg-card p-6 shadow-inner md:p-8">
+        <div class="premium-light-panel mt-8 space-y-6 rounded-sm p-6 shadow-inner md:p-8">
           <div class="flex items-center justify-between gap-4">
             <span class="text-sm font-medium text-muted-foreground">
               Total commande
@@ -168,7 +168,7 @@ useSeoMeta({
 
           <NuxtLink
             to="/checkout"
-            class="flex w-full items-center justify-center gap-3 rounded-sm bg-primary py-5 text-sm font-semibold text-primary-foreground shadow-2xl transition-all hover:bg-foreground hover:text-background"
+            class="flex w-full items-center justify-center gap-3 rounded-sm bg-primary py-5 text-sm font-semibold text-primary-foreground shadow-xl transition-all duration-luxury ease-luxury hover:-translate-y-0.5 hover:bg-primary/92 hover:shadow-2xl"
           >
             Passer commande <ArrowRight class="h-4 w-4" />
           </NuxtLink>

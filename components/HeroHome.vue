@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { BRAND_NAME } from "~/utils/brand";
-
 withDefaults(
   defineProps<{
     overlapNav?: boolean;
@@ -8,62 +6,78 @@ withDefaults(
   { overlapNav: true },
 );
 
-/** Image hero maquette React (luxe boutique). */
 const heroImageUrl =
-  "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1600&q=80";
+  "https://plus.unsplash.com/premium_photo-1661610756820-8dbfaaf9157e?q=80&w=2832&auto=format&fit=crop";
 </script>
 
 <template>
   <section
-    class="relative isolate flex min-h-[85dvh] items-center justify-center overflow-hidden md:min-h-[90vh]"
-    :class="
-      overlapNav ? '-mt-14 pt-14 lg:-mt-16 lg:pt-16' : 'mt-0 bg-background pt-6'
-    "
-    aria-labelledby="hero-heading"
+    class="relative flex min-h-[90vh] items-center overflow-hidden"
+    :class="overlapNav ? '-mt-20 pt-20' : ''"
   >
-    <div class="absolute inset-0 -z-20 overflow-hidden">
-      <img
-        :src="heroImageUrl"
-        alt=""
-        class="motion-safe:animate-st-hero-fade h-full min-h-full w-full scale-105 object-cover object-center"
-        width="1600"
-        height="1067"
-        fetchpriority="high"
-        decoding="async"
-        sizes="100vw"
-      />
-    </div>
-    <div
-      class="absolute inset-0 -z-10 bg-gradient-to-t from-st-black/90 via-transparent to-st-black/40"
-      aria-hidden="true"
-    />
+    <!-- BACKGROUND -->
+    <div class="absolute inset-0">
+      <img :src="heroImageUrl" class="w-full h-full object-cover scale-105" />
 
-    <div
-      class="relative z-10 mx-auto max-w-4xl space-y-6 px-6 text-center text-white md:space-y-10 md:px-10"
-    >
-      <h2
-        id="hero-heading"
-        class="motion-safe:animate-st-rise text-balance font-serif text-3xl leading-[1.08] tracking-tight drop-shadow-md md:text-7xl md:drop-shadow-none lg:text-8xl"
-      >
-        L’Élégance <br class="hidden md:block" />
-        par Tawfekh
-      </h2>
-      <p
-        class="motion-safe:animate-st-rise-delay-1 mx-auto max-w-lg px-2 text-base font-normal leading-[1.65] opacity-95 md:max-w-xl md:px-4 md:text-xl md:leading-[1.7]"
-      >
-        Une curation exclusive mêlant indigo royal et éclats dorés pour un art
-        de vivre d’exception au Sénégal.
-      </p>
+      <!-- OVERLAY (fix lisibilité) -->
       <div
-        class="motion-safe:animate-st-rise-delay-2 flex flex-col justify-center gap-4 pt-2 sm:flex-row md:pt-10"
-      >
+        class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/20"
+      ></div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="relative z-10 w-full px-6 md:px-16 max-w-4xl">
+      <!-- EYEBROW -->
+      <div
+        class="flex items-center gap-3 mb-6 text-xs uppercase mt-10 tracking-[0.2em] text-yellow-400"
+      ></div>
+
+      <!-- TITLE -->
+      <h1 class="flex flex-col leading-tight">
+        <span class="text-white/70 italic text-2xl md:text-4xl">
+          Tous les produits,
+        </span>
+        <span class="text-white text-3xl md:text-6xl font-serif">
+          tous les univers
+        </span>
+      </h1>
+
+      <!-- DIVIDER -->
+      <div
+        class="w-12 h-[2px] bg-gradient-to-r from-yellow-400 to-transparent my-6"
+      ></div>
+
+      <!-- TEXT -->
+      <p class="text-white/80 max-w-xl leading-relaxed text-sm md:text-base">
+        Beauté, parfums, mode, accessoires, bien-être, alimentaire — une
+        boutique pensée pour le quotidien comme pour l'envie.
+      </p>
+
+      <!-- CTA -->
+      <div class="mt-8 flex flex-wrap gap-4">
         <NuxtLink
           to="/catalogue"
-          class="inline-flex items-center justify-center bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground shadow-xl transition-all duration-luxury ease-luxury hover:bg-primary/90 hover:text-primary-foreground md:px-12 md:py-5 md:text-base"
+          class="flex items-center gap-2 bg-yellow-400 text-black px-6 py-3 text-xs font-semibold uppercase tracking-widest transition-all hover:scale-105 hover:shadow-lg"
         >
-          Explorer l’univers
+          Parcourir
+          <span>→</span>
         </NuxtLink>
+
+        <a
+          href="https://wa.me/221770000000"
+          target="_blank"
+          class="flex items-center gap-2 border border-white/30 text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-white/10 transition"
+        >
+          WhatsApp
+        </a>
       </div>
+    </div>
+
+    <!-- BADGE -->
+    <div
+      class="absolute bottom-10 right-6 w-20 h-20 rounded-full border border-yellow-400/40 flex items-center justify-center text-[10px] text-yellow-400 text-center uppercase tracking-wider animate-spin-slow"
+    >
+      Livraison<br />rapide
     </div>
   </section>
 </template>

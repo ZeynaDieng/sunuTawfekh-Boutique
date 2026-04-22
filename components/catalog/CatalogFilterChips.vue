@@ -33,16 +33,22 @@ const emit = defineEmits<{
         v-for="(chip, i) in chips"
         :key="i"
         type="button"
-        class="inline-flex max-w-[min(100%,280px)] shrink-0 touch-manipulation items-center gap-1.5 rounded-full border border-gold/40 bg-gold/5 px-3 py-1.5 text-left text-sm text-foreground transition-colors active:bg-gold/25 hover:bg-gold/15 lg:max-w-full lg:shrink lg:py-1"
+        class="inline-flex max-w-[min(100%,280px)] shrink-0 touch-manipulation items-center gap-1.5 rounded-full border border-gold/35 bg-gold/[0.08] px-3 py-1.5 text-left text-sm text-foreground shadow-sm transition-all duration-luxury ease-luxury hover:-translate-y-0.5 hover:bg-gold/[0.16] active:bg-gold/25 lg:max-w-full lg:shrink lg:py-1"
         @click="emit('remove', chip)"
       >
         <span class="min-w-0 truncate">
           <template v-if="chip.kind === 'stock'">En stock</template>
           <template v-else-if="chip.kind === 'new'">Nouveautés</template>
           <template v-else-if="chip.kind === 'promo'">Promotions</template>
-          <template v-else-if="chip.kind === 'price'">{{ chip.label }}</template>
-          <template v-else-if="chip.kind === 'category'">{{ chip.label }}</template>
-          <template v-else-if="chip.kind === 'search'">« {{ chip.label }} »</template>
+          <template v-else-if="chip.kind === 'price'">{{
+            chip.label
+          }}</template>
+          <template v-else-if="chip.kind === 'category'">{{
+            chip.label
+          }}</template>
+          <template v-else-if="chip.kind === 'search'"
+            >« {{ chip.label }} »</template
+          >
           <template v-else>{{ chip.label }}</template>
         </span>
         <X class="h-3.5 w-3.5 shrink-0 opacity-70" aria-hidden="true" />

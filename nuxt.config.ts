@@ -42,7 +42,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: "fr" },
-      title: "Sunu Tawfekh — Concept Store Premium Dakar",
+      title: "Sunu Tawfekh Boutique — tous produits, tous univers | Dakar",
       meta: [
         { charset: "utf-8" },
         {
@@ -54,18 +54,19 @@ export default defineNuxtConfig({
         {
           name: "description",
           content:
-            "Sunu Tawfekh : beauté, parfums, mode et bien-être au Sénégal. Curation premium, livraison rapide à Dakar.",
+            "Sunu Tawfekh Boutique : beauté, parfums, mode, accessoires, maison, alimentaire, bien-être… Tous vos achats en ligne au Sénégal, livraison à Dakar.",
         },
-        { property: "og:title", content: "Sunu Tawfekh — Concept Store Premium" },
+        { property: "og:title", content: "Sunu Tawfekh Boutique — généraliste & livraison Dakar" },
         {
           property: "og:description",
-          content: "Concept store premium au Sénégal — indigo royal et éclats dorés.",
+          content:
+            "Boutique en ligne : tous rayons, conseils WhatsApp, paiement à la livraison. Dakar & Sénégal.",
         },
         { property: "og:type", content: "website" },
       ],
       link: [
         { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-        { rel: "mask-icon", href: "/favicon.svg", color: "#3F3C8C" },
+        { rel: "mask-icon", href: "/favicon.svg", color: "#000666" },
         { rel: "apple-touch-icon", href: "/favicon.svg" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },

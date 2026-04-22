@@ -8,11 +8,11 @@ const model = defineModel<boolean>({ required: true });
   <label class="group flex cursor-pointer select-none items-center gap-3">
     <input v-model="model" type="checkbox" class="peer sr-only">
     <span
-      class="flex h-4 w-4 shrink-0 items-center justify-center border transition-all peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-primary peer-focus-visible:ring-offset-2"
+      class="flex h-4 w-4 shrink-0 items-center justify-center rounded-[3px] border transition-all duration-luxury ease-luxury peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-primary/30 peer-focus-visible:ring-offset-2"
       :class="
         model
-          ? 'border-primary bg-primary'
-          : 'border-border bg-transparent'
+          ? 'border-primary bg-primary shadow-sm'
+          : 'border-border/80 bg-card/70 group-hover:border-primary/45'
       "
     >
       <Check v-if="model" class="h-2.5 w-2.5 text-white" stroke-width="3" />

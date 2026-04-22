@@ -1,5 +1,12 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from "vue";
+import {
+  computed,
+  nextTick,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+  watch,
+} from "vue";
 import type { CatalogFilterChip } from "~/components/catalog/CatalogFilterChips.vue";
 import type { CatalogFacetsResponse } from "~/composables/useCatalog";
 import { formatPrice } from "~/utils/data";
@@ -85,15 +92,26 @@ watch(
 const { data: catRes } = useCatalogCategories();
 const categories = computed(() => catRes.value?.categories ?? []);
 
-const { data: facetRes } = useFetch<CatalogFacetsResponse>("/api/catalog/facets", {
-  query: computed(() => (activeCat.value ? { cat: activeCat.value } : {})),
-  watch: [activeCat],
-});
+const { data: facetRes } = useFetch<CatalogFacetsResponse>(
+  "/api/catalog/facets",
+  {
+    query: computed(() => (activeCat.value ? { cat: activeCat.value } : {})),
+    watch: [activeCat],
+  },
+);
 
 const categoryFilters = computed(() => facetRes.value?.facets ?? []);
 
 watch(
-  [activeCat, searchQuery, stockOnly, newOnly, promoOnly, priceQuery, activeFilters],
+  [
+    activeCat,
+    searchQuery,
+    stockOnly,
+    newOnly,
+    promoOnly,
+    priceQuery,
+    activeFilters,
+  ],
   () => {
     page.value = 1;
   },
@@ -102,7 +120,9 @@ watch(
 
 const listQuery = computed(() => {
   const filtersJson =
-    Object.keys(activeFilters.value).length > 0 ? JSON.stringify(activeFilters.value) : undefined;
+    Object.keys(activeFilters.value).length > 0
+      ? JSON.stringify(activeFilters.value)
+      : undefined;
   return {
     cat: activeCat.value || undefined,
     q: searchQuery.value || undefined,
@@ -124,9 +144,13 @@ const { data: catalogData, pending } = useFetch("/api/catalog/products", {
 
 const filtered = computed(() => catalogData.value?.items ?? []);
 const totalCount = computed(() => catalogData.value?.total ?? 0);
-const pageSize = computed(() => catalogData.value?.pageSize ?? Number(config.public.catalogPageSize));
+const pageSize = computed(
+  () => catalogData.value?.pageSize ?? Number(config.public.catalogPageSize),
+);
 const showDemoBanner = computed(() => !!catalogData.value?.demoMode);
-const totalPages = computed(() => Math.max(1, Math.ceil(totalCount.value / pageSize.value)));
+const totalPages = computed(() =>
+  Math.max(1, Math.ceil(totalCount.value / pageSize.value)),
+);
 
 function setCat(catId: string | undefined) {
   page.value = 1;
@@ -140,7 +164,9 @@ function setCat(catId: string | undefined) {
 function toggleFilter(key: string, value: string) {
   const prev = activeFilters.value;
   const current = prev[key] || [];
-  const updated = current.includes(value) ? current.filter((v) => v !== value) : [...current, value];
+  const updated = current.includes(value)
+    ? current.filter((v) => v !== value)
+    : [...current, value];
   if (updated.length === 0) {
     const { [key]: _, ...rest } = prev;
     activeFilters.value = rest;
@@ -182,7 +208,12 @@ const filterChips = computed<CatalogFilterChip[]>(() => {
   for (const f of categoryFilters.value) {
     const vals = activeFilters.value[f.key] || [];
     for (const v of vals) {
-      chips.push({ kind: "facet", key: f.key, value: v, label: `${f.label}: ${v}` });
+      chips.push({
+        kind: "facet",
+        key: f.key,
+        value: v,
+        label: `${f.label}: ${v}`,
+      });
     }
   }
   return chips;
@@ -268,33 +299,46 @@ function closeFiltersDrawer() {
 }
 
 const categoryTitle = computed(() =>
-  activeCat.value ? categories.value.find((c) => c.id === activeCat.value)?.name || "Le catalogue" : "Le catalogue",
+  activeCat.value
+    ? categories.value.find((c) => c.id === activeCat.value)?.name ||
+      "Le catalogue"
+    : "Le catalogue",
 );
 
 useSeoMeta({
-  title: () => `${categoryTitle.value} — Sunu Tawfekh`,
-  description: "Collection premium : beauté, parfums, mode et bien-être à Dakar.",
+  title: () => `${categoryTitle.value} — Sunu Tawfekh Boutique`,
+  description:
+    "Catalogue boutique généraliste : beauté, parfums, mode, accessoires, bien-être, alimentaire et plus. Livraison à Dakar.",
 });
 </script>
 
 <template>
-  <div class="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
+  <div
+    class="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground"
+  >
     <Navbar />
     <CatalogDemoBanner :show="showDemoBanner" />
     <div class="pt-with-fixed-nav pb-12">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
+      <div class="mx-auto max-w-container-max px-6 md:px-12 xl:px-margin-x">
         <!-- En-tête maquette React -->
         <div class="mb-12 flex flex-col gap-6">
           <div class="flex flex-wrap items-center justify-between gap-4">
             <div class="min-w-0">
-              <h1 class="text-balance font-serif text-2xl tracking-tight text-primary md:text-4xl">
+              <h1
+                class="text-balance font-serif text-2xl tracking-tight text-primary md:text-4xl"
+              >
                 {{ categoryTitle }}
               </h1>
               <div class="mt-2 flex items-center gap-2">
                 <span class="h-0.5 w-8 bg-gold" aria-hidden="true" />
                 <span class="text-sm font-medium text-muted-foreground">
                   <template v-if="pending">Chargement…</template>
-                  <template v-else>{{ totalCount }} article{{ totalCount !== 1 ? "s" : "" }} sélectionné{{ totalCount !== 1 ? "s" : "" }}</template>
+                  <template v-else
+                    >{{ totalCount }} article{{
+                      totalCount !== 1 ? "s" : ""
+                    }}
+                    sélectionné{{ totalCount !== 1 ? "s" : "" }}</template
+                  >
                 </span>
               </div>
             </div>
@@ -311,7 +355,9 @@ useSeoMeta({
           </div>
 
           <div class="relative w-full max-w-xl">
-            <label class="sr-only" for="catalogue-search">Rechercher un produit</label>
+            <label class="sr-only" for="catalogue-search"
+              >Rechercher un produit</label
+            >
             <Search
               class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-primary/85"
               aria-hidden="true"
@@ -323,13 +369,13 @@ useSeoMeta({
               name="q"
               autocomplete="off"
               placeholder="Rechercher par nom, marque…"
-              class="w-full rounded-sm border border-border bg-muted/50 py-3.5 pl-11 pr-11 text-sm text-foreground placeholder:text-muted-foreground/95 outline-none ring-primary/20 transition-shadow focus:border-primary focus:ring-2"
+              class="w-full rounded-sm border border-border/80 bg-card/80 py-3.5 pl-11 pr-11 text-sm text-foreground placeholder:text-muted-foreground/95 outline-none shadow-sm ring-primary/20 transition-all duration-luxury ease-luxury hover:border-primary/45 hover:bg-card focus:border-primary focus:ring-2"
               @input="onSearchInput"
             />
             <button
               v-if="searchDraft.trim()"
               type="button"
-              class="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-sm text-muted-foreground transition-colors hover:bg-card hover:text-foreground"
+              class="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-sm text-muted-foreground transition-all duration-luxury ease-luxury hover:bg-muted hover:text-foreground"
               aria-label="Effacer la recherche"
               @click="clearSearchField"
             >
@@ -343,9 +389,7 @@ useSeoMeta({
             class="catalog-filters-scroll hidden w-64 shrink-0 lg:block lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:overflow-x-hidden lg:pr-1 lg:sticky lg:top-32 [scrollbar-gutter:stable]"
           >
             <div class="mb-6 hidden items-center justify-between lg:flex">
-              <h2 class="text-sm font-semibold text-foreground">
-                Filtres
-              </h2>
+              <h2 class="text-sm font-semibold text-foreground">Filtres</h2>
               <button
                 v-if="activeCount > 0"
                 type="button"
@@ -379,44 +423,59 @@ useSeoMeta({
               :aria-busy="pending"
               aria-live="polite"
             >
-              <ProductCard v-for="p in filtered" :key="p.id" :product="p" />
+              <ProductCard
+                v-for="p in filtered"
+                :key="p.id"
+                :show-new-badge="false"
+                :product="p"
+              />
             </div>
 
             <div
               v-if="!pending && filtered.length === 0"
               class="space-y-6 rounded-sm bg-muted/40 py-32 text-center"
             >
-              <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-card shadow-sm">
+              <div
+                class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-card shadow-sm"
+              >
                 <Search class="h-6 w-6 text-muted-foreground" />
               </div>
               <p class="text-base font-normal text-muted-foreground">
                 <template v-if="searchQuery">
-                  Aucun résultat pour « {{ searchQuery }} ». Essayez d’autres mots ou élargissez les filtres.
+                  Aucun résultat pour « {{ searchQuery }} ». Essayez d’autres
+                  mots ou élargissez les filtres.
                 </template>
-                <template v-else>Aucun produit ne correspond à ces critères.</template>
+                <template v-else
+                  >Aucun produit ne correspond à ces critères.</template
+                >
               </p>
               <button
                 type="button"
-                class="border border-primary px-6 py-3 text-sm font-semibold text-primary transition-all hover:bg-primary hover:text-white"
+                class="border border-primary px-6 py-3 text-sm font-semibold text-primary transition-all hover:bg-primary hover:text-primary-foreground"
                 @click="resetFilters"
               >
                 Réinitialiser les filtres
               </button>
             </div>
 
-            <div v-if="totalPages > 1" class="mt-14 flex items-center justify-center gap-4">
+            <div
+              v-if="totalPages > 1"
+              class="mt-14 flex items-center justify-center gap-4"
+            >
               <button
                 type="button"
-                class="rounded-sm border border-border px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-40"
+                class="rounded-sm border border-border px-4 py-2 text-sm text-muted-foreground transition-all duration-luxury ease-luxury hover:-translate-y-0.5 hover:border-primary hover:text-primary disabled:opacity-40"
                 :disabled="page <= 1"
                 @click="page--"
               >
                 Précédent
               </button>
-              <span class="text-sm text-muted-foreground">Page {{ page }} / {{ totalPages }}</span>
+              <span class="text-sm text-muted-foreground"
+                >Page {{ page }} / {{ totalPages }}</span
+              >
               <button
                 type="button"
-                class="rounded-sm border border-border px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-40"
+                class="rounded-sm border border-border px-4 py-2 text-sm text-muted-foreground transition-all duration-luxury ease-luxury hover:-translate-y-0.5 hover:border-primary hover:text-primary disabled:opacity-40"
                 :disabled="page >= totalPages"
                 @click="page++"
               >
@@ -437,7 +496,7 @@ useSeoMeta({
             role="presentation"
           >
             <div
-              class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+              class="absolute inset-0 bg-foreground/35 backdrop-blur-sm transition-opacity dark:bg-black/60"
               aria-hidden="true"
               @click="closeFiltersDrawer"
             />
@@ -451,7 +510,10 @@ useSeoMeta({
               @click.stop
             >
               <div class="flex shrink-0 items-center justify-between p-8 pb-4">
-                <h2 id="catalog-filters-drawer-title" class="text-base font-semibold text-primary">
+                <h2
+                  id="catalog-filters-drawer-title"
+                  class="text-base font-semibold text-primary"
+                >
                   Affiner
                 </h2>
                 <button
@@ -463,7 +525,9 @@ useSeoMeta({
                   <X class="h-[18px] w-[18px]" />
                 </button>
               </div>
-              <div class="catalog-filters-scroll min-h-0 flex-1 overflow-y-auto overscroll-y-contain px-8 pb-4">
+              <div
+                class="catalog-filters-scroll min-h-0 flex-1 overflow-y-auto overscroll-y-contain px-8 pb-4"
+              >
                 <CatalogFiltersPanel
                   v-model:stock-only="stockOnly"
                   v-model:new-only="newOnly"
@@ -479,10 +543,12 @@ useSeoMeta({
                   @toggle-filter="toggleFilter"
                 />
               </div>
-              <div class="shrink-0 p-8 pt-2 pb-[max(1.5rem,env(safe-area-inset-bottom))]">
+              <div
+                class="shrink-0 p-8 pt-2 pb-[max(1.5rem,env(safe-area-inset-bottom))]"
+              >
                 <button
                   type="button"
-                  class="w-full rounded-sm bg-st-black py-5 text-sm font-semibold text-white shadow-2xl"
+                  class="w-full rounded-sm bg-primary py-5 text-sm font-semibold text-primary-foreground shadow-xl"
                   @click="closeFiltersDrawer"
                 >
                   Voir les résultats

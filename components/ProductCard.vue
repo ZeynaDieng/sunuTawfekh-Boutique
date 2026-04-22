@@ -10,8 +10,20 @@ const props = withDefaults(
     variant?: "default" | "dark";
     /** Typo / gouttières réduites sur mobile (ex. carrousel home). */
     compact?: boolean;
+    /** Ratio image (maquette « Pièces maîtresses » = 3/4). */
+    imageAspect?: "4/5" | "3/4";
+    /** Badge « Nouveau » sur la vignette. */
+    showNewBadge?: boolean;
+    /** Badge « Rupture » lorsque hors stock. */
+    showOutOfStockBadge?: boolean;
   }>(),
-  { variant: "default", compact: false },
+  {
+    variant: "default",
+    compact: false,
+    imageAspect: "4/5",
+    showNewBadge: true,
+    showOutOfStockBadge: true,
+  },
 );
 
 const { addItem, wishlist, toggleWishlist } = useCart();
@@ -46,7 +58,11 @@ const label = computed(() => {
 const cardRootClass = computed(() =>
   props.variant === "dark"
     ? "bg-transparent shadow-none ring-0"
-    : "rounded-sm bg-card text-card-foreground shadow-sm ring-1 ring-border hover:shadow-xl dark:ring-border",
+    : "rounded-sm bg-card text-card-foreground shadow-sm ring-1 ring-border/70 hover:shadow-2xl dark:ring-border",
+);
+
+const aspectClass = computed(() =>
+  props.imageAspect === "3/4" ? "aspect-[3/4]" : "aspect-[4/5]",
 );
 </script>
 
@@ -57,12 +73,13 @@ const cardRootClass = computed(() =>
     :class="cardRootClass"
   >
     <div
-      class="relative aspect-[4/5] overflow-hidden rounded-sm"
-      :class="
+      class="relative overflow-hidden rounded-sm"
+      :class="[
+        aspectClass,
         variant === 'dark'
           ? 'bg-white/5 ring-1 ring-white/10'
-          : 'bg-muted/30 ring-1 ring-transparent dark:bg-muted/20'
-      "
+          : 'bg-muted/30 ring-1 ring-transparent dark:bg-muted/20',
+      ]"
     >
       <ProductImage
         class="absolute inset-0 z-0"
@@ -78,7 +95,7 @@ const cardRootClass = computed(() =>
       />
 
       <span
-        v-if="!product.inStock"
+        v-if="showOutOfStockBadge && !product.inStock"
         class="absolute left-4 top-4 border border-border bg-card/95 px-3 py-1 text-[10px] font-semibold text-card-foreground shadow-sm backdrop-blur-sm"
         :class="
           compact
@@ -86,11 +103,11 @@ const cardRootClass = computed(() =>
             : ''
         "
       >
-        Sold out
+        Rupture
       </span>
 
       <span
-        v-if="product.isNew && product.inStock"
+        v-if="showNewBadge && product.isNew && product.inStock"
         class="absolute left-4 top-4 rounded-sm bg-primary px-3 py-1 text-[10px] font-semibold text-primary-foreground shadow-sm"
         :class="
           compact
@@ -103,7 +120,7 @@ const cardRootClass = computed(() =>
 
       <button
         type="button"
-        class="absolute bottom-6 left-6 right-6 flex translate-y-20 items-center justify-center gap-3 bg-primary py-4 text-sm font-semibold text-primary-foreground shadow-2xl transition-transform duration-luxury ease-luxury group-hover:translate-y-0 disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground"
+        class="luxe-glass absolute bottom-6 left-6 right-6 flex translate-y-24 items-center justify-center gap-3 border border-primary/15 py-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary opacity-0 shadow-xl transition-all duration-500 ease-luxury group-hover:translate-y-0 group-hover:opacity-100 hover:bg-primary hover:text-primary-foreground disabled:cursor-not-allowed disabled:opacity-60"
         :class="
           compact
             ? 'max-md:bottom-4 max-md:left-3 max-md:right-3 max-md:gap-2 max-md:py-3 max-md:text-[9px]'
@@ -117,7 +134,7 @@ const cardRootClass = computed(() =>
 
       <button
         type="button"
-        class="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-card/95 shadow-sm ring-1 ring-border backdrop-blur-sm transition-all duration-luxury ease-luxury hover:scale-110"
+        class="luxe-glass absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full shadow-sm transition-all duration-luxury ease-luxury hover:scale-110"
         :class="compact ? 'max-md:right-2 max-md:top-2 max-md:h-8 max-md:w-8' : ''"
         aria-label="Favoris"
         @click.prevent.stop="toggleWishlist(product.id)"
@@ -128,7 +145,7 @@ const cardRootClass = computed(() =>
             isWished(product.id)
               ? variant === 'dark'
                 ? 'fill-gold text-gold'
-                : 'fill-primary text-primary'
+                : 'fill-secondary text-secondary'
               : 'text-foreground'
           "
         />
@@ -166,7 +183,7 @@ const cardRootClass = computed(() =>
         </div>
       </div>
       <h3
-        class="line-clamp-1 capitalize font-serif text-sm tracking-tight transition-colors duration-luxury ease-luxury group-hover:text-primary-soft md:text-base"
+        class="luxe-title line-clamp-1 text-base font-semibold capitalize text-foreground transition-colors duration-luxury ease-luxury group-hover:text-secondary md:text-lg"
         :class="
           compact
             ? 'max-md:line-clamp-2 max-md:text-xs max-md:leading-tight md:line-clamp-1'
@@ -176,7 +193,7 @@ const cardRootClass = computed(() =>
         {{ product.name }}
       </h3>
       <p
-        class="text-sm font-bold tracking-tight text-gold md:text-base"
+        class="text-sm font-semibold tracking-tight text-primary md:text-base"
         :class="compact ? 'max-md:text-xs' : ''"
       >
         {{ formatPrice(product.price) }}

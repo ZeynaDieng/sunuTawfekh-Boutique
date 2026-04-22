@@ -101,11 +101,12 @@ useSeoMeta({
   <div class="min-h-screen bg-background text-foreground">
     <Navbar />
     <div class="pt-with-fixed-nav pb-12">
-      <div class="container mx-auto px-4 max-w-2xl">
-        <h2 class="text-3xl font-serif mb-8 text-center">Finaliser la commande</h2>
+      <div class="mx-auto max-w-container-max px-6 md:px-12 xl:px-margin-x">
+        <div class="mx-auto max-w-2xl">
+        <h2 class="luxe-title mb-8 text-center text-3xl font-semibold md:text-4xl">Finaliser la commande</h2>
 
         <form class="space-y-6" @submit="handleSubmit">
-          <div class="border border-border p-4 space-y-2">
+          <div class="premium-light-panel space-y-2 p-4">
             <h3 class="mb-3 text-sm font-semibold">Récapitulatif</h3>
             <div v-for="i in items" :key="i.product.id" class="flex justify-between text-sm">
               <span>{{ i.product.name }} × {{ i.quantity }}</span>
@@ -132,8 +133,8 @@ useSeoMeta({
               <button
                 type="button"
                 :class="[
-                  'text-left p-4 border transition-colors',
-                  payment === 'livraison' ? 'border-primary' : 'border-border',
+                  'premium-light-surface text-left p-4 transition-all duration-luxury ease-luxury hover:border-primary/50',
+                  payment === 'livraison' ? 'border-primary ring-1 ring-primary/20' : 'border-border',
                 ]"
                 @click="payment = 'livraison'"
               >
@@ -143,8 +144,8 @@ useSeoMeta({
               <button
                 type="button"
                 :class="[
-                  'text-left p-4 border transition-colors',
-                  payment === 'whatsapp' ? 'border-primary' : 'border-border',
+                  'premium-light-surface text-left p-4 transition-all duration-luxury ease-luxury hover:border-primary/50',
+                  payment === 'whatsapp' ? 'border-primary ring-1 ring-primary/20' : 'border-border',
                 ]"
                 @click="payment = 'whatsapp'"
               >
@@ -158,6 +159,7 @@ useSeoMeta({
             {{ submitting ? "Envoi…" : "Confirmer la commande" }}
           </Button>
         </form>
+        </div>
       </div>
     </div>
     <Footer />

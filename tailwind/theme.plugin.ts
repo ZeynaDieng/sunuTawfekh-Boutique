@@ -47,9 +47,9 @@ export const themePlugin = plugin(({ addBase, addUtilities, theme }) => {
       paddingTop: "env(safe-area-inset-top, 0px)",
     },
     ".pt-with-fixed-nav": {
-      paddingTop: "calc(3.5rem + env(safe-area-inset-top, 0px) + 1rem)",
+      paddingTop: "calc(6rem + env(safe-area-inset-top, 0px) + 1rem)",
       [`@media (min-width: ${lgMin})`]: {
-        paddingTop: "calc(4rem + env(safe-area-inset-top, 0px) + 1rem)",
+        paddingTop: "calc(6rem + env(safe-area-inset-top, 0px) + 1rem)",
       },
     },
   });

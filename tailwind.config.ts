@@ -23,7 +23,16 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
-        serif: ["Inter", "system-ui", "sans-serif"],
+        serif: ["Noto Serif", "Georgia", "serif"],
+      },
+      spacing: {
+        "stack-sm": "16px",
+        "stack-md": "40px",
+        "stack-lg": "80px",
+        gutter: "32px",
+        "container-max": "90rem",
+        "margin-x": "80px",
+        unit: "8px",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -81,7 +90,7 @@ export default {
           offwhite: "#F8F8F8",
           softgray: "#EAEAEA",
           gold: "#E0A83A",
-          indigo: "#3F3C8C",
+          indigo: "#000666",
         },
       },
       borderRadius: {

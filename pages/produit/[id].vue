@@ -164,7 +164,7 @@ useSeoMeta({
     <Navbar />
     <CatalogDemoBanner :show="showDemoBanner" />
     <div class="pt-with-fixed-nav pb-12 lg:pb-12 max-lg:pb-[calc(5.5rem+env(safe-area-inset-bottom,0px))]">
-      <div class="mx-auto max-w-7xl px-4 md:px-8">
+      <div class="mx-auto max-w-container-max px-6 md:px-12 xl:px-margin-x">
         <NuxtLink
           to="/catalogue"
           class="mb-6 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary md:mb-10 lg:mb-12"
@@ -227,8 +227,12 @@ useSeoMeta({
                 v-for="(img, i) in allImages"
                 :key="i"
                 type="button"
-                class="relative aspect-square w-[4.25rem] shrink-0 snap-start overflow-hidden rounded-md border border-border opacity-70 ring-offset-2 ring-offset-background transition-all active:scale-[0.98] md:min-w-0 md:w-auto md:rounded-sm md:opacity-60 md:ring-offset-0 md:hover:border-gold md:hover:opacity-100"
-                :class="i === selectedImage ? 'border-gold opacity-100 ring-2 ring-gold/50 md:ring-0' : ''"
+                class="relative aspect-square w-[4.25rem] shrink-0 snap-start overflow-hidden rounded-md border border-border opacity-70 ring-offset-2 ring-offset-background transition-all active:scale-[0.98] md:min-w-0 md:w-auto md:rounded-sm md:opacity-60 md:ring-offset-0 md:hover:border-secondary md:hover:opacity-100"
+                :class="
+                  i === selectedImage
+                    ? 'border-secondary opacity-100 ring-2 ring-secondary/40 md:ring-0'
+                    : 'hover:-translate-y-0.5 hover:shadow-sm'
+                "
                 :aria-current="i === selectedImage ? 'true' : undefined"
                 @click="onSelectGalleryImage(i)"
               >
@@ -259,18 +263,18 @@ useSeoMeta({
                 </span>
               </div>
               <h1
-                class="text-balance capitalize font-serif text-2xl font-normal leading-[1.15] tracking-tight text-foreground sm:text-[1.65rem] md:text-4xl lg:text-5xl"
+                class="luxe-title text-balance text-3xl font-semibold capitalize leading-[1.12] text-primary sm:text-[1.85rem] md:text-5xl lg:text-[3.25rem]"
               >
                 {{ product.name }}
               </h1>
-              <p class="text-xl font-bold tracking-tighter text-gold md:text-3xl">
+              <p class="text-xl font-semibold tracking-tight text-primary md:text-3xl">
                 {{ formatPrice(product.price) }}
                 <span v-if="product.oldPrice" class="ml-2 text-base font-normal text-muted-foreground line-through md:text-lg">{{
                   formatPrice(product.oldPrice)
                 }}</span>
               </p>
-              <div class="flex flex-wrap items-center gap-2 text-gold">
-                <Star class="h-4 w-4 shrink-0 fill-gold text-gold" />
+              <div class="flex flex-wrap items-center gap-2 text-secondary">
+                <Star class="h-4 w-4 shrink-0 fill-secondary text-secondary" />
                 <span class="text-sm font-bold">{{ product.rating }}</span>
                 <span class="text-base text-muted-foreground">({{ product.reviews }} avis)</span>
               </div>
@@ -286,7 +290,7 @@ useSeoMeta({
             <div class="hidden gap-3 lg:flex lg:flex-row lg:gap-4">
               <button
                 type="button"
-                class="flex min-h-12 flex-1 items-center justify-center gap-3 rounded-sm bg-primary py-4 text-sm font-semibold text-primary-foreground shadow-xl transition-all hover:bg-foreground hover:text-background active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground md:py-5"
+                class="flex min-h-12 flex-1 items-center justify-center gap-3 rounded-sm bg-primary py-4 text-sm font-semibold text-primary-foreground shadow-md transition-all duration-luxury ease-luxury hover:-translate-y-0.5 hover:bg-primary/92 hover:shadow-xl active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground md:py-5"
                 :disabled="!product.inStock"
                 @click="onAddToCart"
               >
@@ -294,11 +298,11 @@ useSeoMeta({
               </button>
               <button
                 type="button"
-                class="flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded-sm border border-border bg-card px-5 transition-all hover:border-gold hover:text-gold md:min-w-14"
+                class="luxe-glass flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded-sm px-5 shadow-sm transition-all duration-luxury ease-luxury hover:-translate-y-0.5 hover:border-secondary/40 hover:text-secondary hover:shadow-md md:min-w-14"
                 aria-label="Favoris"
                 @click="toggleWishlist(product.id)"
               >
-                <Heart class="h-5 w-5 transition-colors" :class="isWished ? 'fill-gold text-gold' : ''" />
+                <Heart class="h-5 w-5 transition-colors" :class="isWished ? 'fill-secondary text-secondary' : ''" />
               </button>
             </div>
 
@@ -306,7 +310,7 @@ useSeoMeta({
               :href="`https://wa.me/221770000000?text=${whatsappMsg}`"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex min-h-12 w-full items-center justify-center gap-3 rounded-sm bg-[#25D366] px-4 py-4 text-sm font-semibold text-white shadow-lg transition-all active:scale-[0.99] hover:opacity-90 md:py-5"
+              class="flex min-h-12 w-full items-center justify-center gap-3 rounded-sm bg-[#25D366] px-4 py-4 text-sm font-semibold text-white shadow-md transition-all duration-luxury ease-luxury hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99] hover:opacity-95 md:py-5"
             >
               <MessageCircle class="h-5 w-5 shrink-0" /> WhatsApp
             </a>
@@ -343,11 +347,16 @@ useSeoMeta({
         </div>
 
         <div v-if="similar.length > 0" class="mt-14 md:mt-24">
-          <h2 class="mb-5 font-serif text-xl text-primary md:mb-6 md:text-3xl">
+          <h2 class="luxe-title mb-5 text-2xl font-semibold md:mb-6 md:text-4xl">
             À découvrir aussi
           </h2>
           <div class="grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-8 sm:gap-y-12 xl:grid-cols-4">
-            <ProductCard v-for="p in similar" :key="p.id" :product="p" />
+            <ProductCard
+              v-for="p in similar"
+              :key="p.id"
+              :show-new-badge="false"
+              :product="p"
+            />
           </div>
         </div>
       </div>
@@ -358,10 +367,10 @@ useSeoMeta({
       class="fixed bottom-0 left-0 right-0 z-40 border-t border-border bg-card/95 px-4 py-3 shadow-[0_-8px_30px_rgba(0,0,0,0.08)] backdrop-blur-md supports-[backdrop-filter]:bg-card/85 lg:hidden dark:shadow-[0_-8px_30px_rgba(0,0,0,0.35)]"
       style="padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0px))"
     >
-      <div class="mx-auto flex max-w-7xl gap-3">
+      <div class="mx-auto flex w-full max-w-container-max gap-3">
         <button
           type="button"
-          class="flex min-h-12 flex-1 items-center justify-center gap-2 rounded-sm bg-primary text-sm font-semibold text-primary-foreground shadow-lg active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground"
+          class="flex min-h-12 flex-1 items-center justify-center gap-2 rounded-sm bg-primary text-sm font-semibold text-primary-foreground shadow-md transition-all duration-luxury ease-luxury hover:-translate-y-0.5 hover:bg-primary/92 hover:shadow-lg active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground"
           :disabled="!product.inStock"
           @click="onAddToCart"
         >
@@ -370,11 +379,11 @@ useSeoMeta({
         </button>
         <button
           type="button"
-          class="flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded-sm border border-border bg-background text-foreground transition-colors active:scale-[0.98] hover:border-gold"
+          class="luxe-glass flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded-sm text-foreground shadow-sm transition-all duration-luxury ease-luxury active:scale-[0.98] hover:-translate-y-0.5 hover:border-secondary/40 hover:text-secondary hover:shadow-md"
           aria-label="Favoris"
           @click="toggleWishlist(product.id)"
         >
-          <Heart class="h-5 w-5 transition-colors" :class="isWished ? 'fill-gold text-gold' : ''" />
+          <Heart class="h-5 w-5 transition-colors" :class="isWished ? 'fill-secondary text-secondary' : ''" />
         </button>
       </div>
     </div>
