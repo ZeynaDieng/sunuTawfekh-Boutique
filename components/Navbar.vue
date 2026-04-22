@@ -13,7 +13,7 @@ import {
 } from "lucide-vue-next";
 import { onBeforeUnmount, onMounted, ref, watch, computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { BRAND_NAME, BRAND_TAGLINE, HOME_CATEGORIES } from "~/utils/brand";
+import { BRAND_NAME, HOME_CATEGORIES } from "~/utils/brand";
 
 const route = useRoute();
 const router = useRouter();
@@ -82,13 +82,9 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
+  <!-- NAVBAR -->
   <nav
-    class="safe-nav-top fixed left-0 right-0 top-0 z-50 w-full transition-all duration-300"
-    :class="
-      isScrolled
-        ? 'bg-background/90 backdrop-blur-md border-b border-border shadow-md'
-        : 'bg-white dark:bg-black border-border'
-    "
+    class="fixed left-0 right-0 top-0 z-50 w-full transition-all duration-300 bg-background/90 backdrop-blur-md border-b border-border shadow-md"
   >
     <div
       class="mx-auto flex h-20 w-full max-w-container-max items-center justify-between px-4 md:px-12"
@@ -96,18 +92,15 @@ onBeforeUnmount(() => {
       <!-- LEFT -->
       <div class="flex items-center gap-3">
         <button class="lg:hidden" @click="menuOpen = true">
-          <Menu class="h-6 w-6" />
+          <Menu class="h-6 w-6 text-primary" />
         </button>
 
-        <NuxtLink
-          to="/"
-          class="font-serif text-lg md:text-2xl transition-colors duration-300"
-        >
+        <NuxtLink to="/" class="font-serif text-lg md:text-2xl text-primary">
           {{ BRAND_NAME }}
         </NuxtLink>
       </div>
 
-      <!-- CENTER (desktop) -->
+      <!-- CENTER -->
       <div class="hidden lg:flex gap-8 text-sm uppercase tracking-wide">
         <NuxtLink
           v-for="cat in HOME_CATEGORIES"
@@ -120,7 +113,7 @@ onBeforeUnmount(() => {
       </div>
 
       <!-- RIGHT -->
-      <div class="flex items-center gap-3 text-foreground">
+      <div class="flex items-center gap-3">
         <button @click="toggleTheme">
           <Sun v-if="isDark" class="h-5 w-5" />
           <Moon v-else class="h-5 w-5" />
@@ -152,4 +145,95 @@ onBeforeUnmount(() => {
       </div>
     </div>
   </nav>
+
+  <!-- OVERLAY -->
+  <Transition name="fade">
+    <div
+      v-if="menuOpen"
+      class="fixed inset-0 z-40 bg-black/50 lg:hidden"
+      @click="menuOpen = false"
+    ></div>
+  </Transition>
+
+  <!-- DRAWER -->
+  <Transition name="slide">
+    <div
+      v-if="menuOpen"
+      class="fixed top-0 left-0 z-50 h-full w-3/4 max-w-xs bg-background p-6 shadow-xl lg:hidden font-serif"
+    >
+      <!-- HEADER -->
+      <div class="flex items-center justify-between mb-6">
+        <span class="font-semibold text-lg">Menu</span>
+        <button @click="menuOpen = false">
+          <X class="h-5 w-5" />
+        </button>
+      </div>
+
+      <!-- LINKS -->
+      <div class="flex flex-col gap-4">
+        <!-- ACCUEIL -->
+        <NuxtLink
+          to="/"
+          @click="menuOpen = false"
+          class="transition-colors duration-300"
+          :class="
+            route.path === '/' ? 'text-gold' : 'text-foreground hover:text-gold'
+          "
+        >
+          Accueil
+        </NuxtLink>
+
+        <!-- CATALOGUE -->
+        <NuxtLink
+          to="/catalogue"
+          @click="menuOpen = false"
+          class="transition-colors duration-300"
+          :class="
+            route.path === '/catalogue' && !route.query.cat
+              ? 'text-gold'
+              : 'text-foreground hover:text-gold'
+          "
+        >
+          Catalogue
+        </NuxtLink>
+
+        <!-- CATEGORIES -->
+        <NuxtLink
+          v-for="cat in HOME_CATEGORIES"
+          :key="cat.id"
+          :to="`/catalogue?cat=${cat.id}`"
+          @click="menuOpen = false"
+          class="transition-colors duration-300"
+          :class="
+            route.query.cat === cat.id
+              ? 'text-gold'
+              : 'text-foreground hover:text-gold'
+          "
+        >
+          {{ cat.name }}
+        </NuxtLink>
+      </div>
+    </div>
+  </Transition>
 </template>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active {
+  transition: transform 0.3s ease;
+}
+.slide-enter-from {
+  transform: translateX(-100%);
+}
+.slide-leave-to {
+  transform: translateX(-100%);
+}
+</style>
