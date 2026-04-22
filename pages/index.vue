@@ -395,7 +395,7 @@ useSeoMeta({
         </div>
         <div
           v-if="featuredProducts.length"
-          class="grid grid-cols-1 gap-gutter md:grid-cols-2 xl:grid-cols-4"
+          class="grid grid-cols-2 gap-gutter md:grid-cols-2 xl:grid-cols-4"
         >
           <ProductCard
             v-for="p in featuredProducts"
@@ -525,7 +525,7 @@ useSeoMeta({
 
         <div
           v-if="ourProductsVisible.length"
-          class="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-4"
+          class="grid grid-cols-2 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-4"
         >
           <div v-for="p in ourProductsVisible" :key="p.id" class="group">
             <div class="relative mb-6 aspect-[3/4] overflow-hidden bg-muted">

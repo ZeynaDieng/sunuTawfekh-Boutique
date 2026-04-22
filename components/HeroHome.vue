@@ -72,12 +72,5 @@ const heroImageUrl =
         </a>
       </div>
     </div>
-
-    <!-- BADGE -->
-    <div
-      class="absolute bottom-10 right-6 w-20 h-20 rounded-full border border-yellow-400/40 flex items-center justify-center text-[10px] text-yellow-400 text-center uppercase tracking-wider animate-spin-slow"
-    >
-      Livraison<br />rapide
-    </div>
   </section>
 </template>
