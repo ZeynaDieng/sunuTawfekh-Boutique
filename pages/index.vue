@@ -196,7 +196,7 @@ useSeoMeta({
       <div class="mx-auto max-w-container-max px-6 md:px-12 xl:px-margin-x">
         <div class="mb-stack-md flex flex-col items-center text-center">
           <span
-            class="home-label-caps mb-4 block font-sans uppercase tracking-[0.2em] text-secondary"
+            class="home-label-caps mb-4 block font-sans uppercase tracking-[0.2em] text-gold"
           >
             Le dernier cri
           </span>
@@ -222,7 +222,7 @@ useSeoMeta({
           </NuxtLink>
           <div class="flex flex-col justify-center space-y-8 md:pl-12">
             <div class="space-y-4 text-center md:text-left">
-              <h3 class="font-serif text-3xl text-primary md:text-4xl">
+              <h3 class="font-serif text-3xl text-gold md:text-4xl">
                 {{ newArrivalBlock.title }}
               </h3>
               <p
@@ -293,7 +293,7 @@ useSeoMeta({
           <div>
             <!-- EYEBROW -->
             <div
-              class="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-secondary mb-2"
+              class="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-gold mb-2"
             >
               <span class="w-[5px] h-[5px] rounded-full bg-current"></span>
               Rayons & catégories
@@ -420,18 +420,18 @@ useSeoMeta({
         >
           <div class="md:w-1/3 md:shrink-0">
             <span
-              class="home-label-caps mb-4 block font-sans uppercase text-secondary"
+              class="home-label-caps mb-4 block font-sans uppercase text-gold"
             >
               Avis clients
             </span>
             <h2 class="home-font-h2 mb-6 font-serif text-primary">
               Ils achètent sur Sunu Tawfekh
             </h2>
-            <div class="mb-8 flex gap-0.5 text-secondary">
+            <div class="mb-8 flex gap-0.5 text-gold">
               <Star
                 v-for="s in 5"
                 :key="s"
-                class="h-5 w-5 fill-secondary text-secondary"
+                class="h-5 w-5 fill-gold text-gold"
               />
             </div>
             <p class="home-font-body-lg font-sans italic text-muted-foreground">
@@ -443,7 +443,7 @@ useSeoMeta({
             <div
               class="glass-panel-heritage w-full max-w-lg rounded-sm border border-white/40 p-8 text-primary md:p-12 dark:border-white/20 dark:text-white"
             >
-              <Quote class="mb-8 h-10 w-10 text-secondary" aria-hidden="true" />
+              <Quote class="mb-8 h-10 w-10 text-gold" aria-hidden="true" />
               <p
                 class="mb-10 font-serif text-xl italic leading-snug md:text-2xl"
               >
@@ -463,7 +463,7 @@ useSeoMeta({
             <div
               class="glass-panel-heritage hidden w-full max-w-lg rounded-sm border border-white/40 p-8 text-primary md:p-12 lg:block lg:translate-y-12 dark:border-white/20 dark:text-white"
             >
-              <Quote class="mb-8 h-10 w-10 text-secondary" aria-hidden="true" />
+              <Quote class="mb-8 h-10 w-10 text-gold" aria-hidden="true" />
               <p
                 class="mb-10 font-serif text-xl italic leading-snug md:text-2xl"
               >
@@ -551,14 +551,14 @@ useSeoMeta({
             </div>
             <div class="space-y-1">
               <p
-                class="home-label-caps text-[10px] uppercase tracking-[0.2em] text-secondary"
+                class="home-label-caps text-[10px] uppercase tracking-[0.2em] text-gold"
               >
                 {{ productRayonLabel(p) }}
               </p>
               <h4 class="font-serif text-lg text-primary">
                 <NuxtLink
                   :to="`/produit/${p.id}`"
-                  class="transition-colors hover:text-secondary"
+                  class="transition-colors hover:text-gold"
                 >
                   {{ p.name }}
                 </NuxtLink>
